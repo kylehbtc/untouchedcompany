@@ -8,57 +8,62 @@
 * { box-sizing: border-box; margin: 0; padding: 0; }
 body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background: #080810; color: #e0e0e0; min-height: 100vh; }
 
-.header { background: linear-gradient(135deg, #0d0d1a 0%, #1a0800 100%); border-bottom: 1px solid #2a1a00; padding: 16px 24px; display: flex; align-items: center; justify-content: space-between; position: sticky; top: 0; z-index: 100; }
-.logo { font-size: 16px; font-weight: 800; color: #fff; letter-spacing: -0.3px; }
+.header { background: linear-gradient(135deg, #0d0d1a 0%, #1a0800 100%); border-bottom: 1px solid #2a1a00; padding: 14px 24px; display: flex; align-items: center; justify-content: space-between; position: sticky; top: 0; z-index: 100; backdrop-filter: blur(10px); }
+.logo { font-size: 15px; font-weight: 800; color: #fff; }
 .logo span { color: #f7931a; }
-.header-meta { font-size: 12px; color: #555; }
+.header-meta { font-size: 11px; color: #555; margin-top: 2px; }
 .header-meta strong { color: #888; }
-.progress-wrap { display: flex; align-items: center; gap: 10px; }
-.progress-bar-bg { width: 120px; height: 6px; background: #1e1e2e; border-radius: 3px; }
-.progress-bar { height: 6px; border-radius: 3px; background: linear-gradient(90deg, #f7931a, #ffb347); transition: width 0.3s; }
-.progress-text { font-size: 12px; color: #888; min-width: 50px; }
+.header-right { display: flex; align-items: center; gap: 20px; }
 .decision-counter { display: flex; gap: 12px; }
 .dc { font-size: 12px; font-weight: 700; }
 .dc-contact { color: #27ae60; }
 .dc-delete { color: #e74c3c; }
+.progress-wrap { display: flex; align-items: center; gap: 8px; }
+.progress-bar-bg { width: 100px; height: 5px; background: #1e1e2e; border-radius: 3px; }
+.progress-bar { height: 5px; border-radius: 3px; background: linear-gradient(90deg, #f7931a, #ffb347); transition: width 0.3s; }
+.progress-text { font-size: 11px; color: #666; min-width: 40px; }
 
-.cards-wrap { max-width: 900px; margin: 0 auto; padding: 24px 16px; display: flex; flex-direction: column; gap: 16px; }
+.cards-wrap { max-width: 860px; margin: 0 auto; padding: 20px 16px 100px; display: flex; flex-direction: column; gap: 14px; }
 
-.card { background: #0f0f1a; border: 1px solid #1e1e2e; border-radius: 16px; overflow: hidden; transition: border-color 0.2s, transform 0.15s; }
-.card:hover { border-color: #2a2a3e; }
-.card.decided-contact { border-color: #27ae60; background: #0a1a0f; }
-.card.decided-delete { border-color: #e74c3c33; background: #1a0a0a; opacity: 0.7; }
+.card { background: #0f0f1a; border: 1px solid #1e1e2e; border-radius: 14px; overflow: hidden; transition: border-color 0.2s; }
+.card.decided-contact { border-color: #27ae6066; background: #0a160d; }
+.card.decided-delete { border-color: #e74c3c33; background: #150a0a; opacity: 0.6; }
 
-.card-top { padding: 18px 20px 14px; display: flex; align-items: flex-start; gap: 14px; }
-.score-ring { flex-shrink: 0; width: 56px; height: 56px; border-radius: 50%; display: flex; flex-direction: column; align-items: center; justify-content: center; font-weight: 800; border: 2px solid; }
-.score-ring.tier-S { border-color: #9b59b6; background: #1a0f2e; color: #9b59b6; }
-.score-ring.tier-A { border-color: #f7931a; background: #1a0f00; color: #f7931a; }
-.score-ring.tier-B { border-color: #2980b9; background: #0a1525; color: #2980b9; }
-.score-ring.tier-C { border-color: #555; background: #111; color: #777; }
-.score-num { font-size: 18px; line-height: 1; }
-.score-tier { font-size: 10px; opacity: 0.8; }
+.card-top { padding: 16px 18px 12px; display: flex; align-items: flex-start; gap: 12px; }
+.score-ring { flex-shrink: 0; width: 52px; height: 52px; border-radius: 50%; display: flex; flex-direction: column; align-items: center; justify-content: center; font-weight: 800; border: 2px solid; }
+.tier-A { border-color: #f7931a; background: #1a0f00; color: #f7931a; }
+.tier-B { border-color: #2980b9; background: #0a1525; color: #2980b9; }
+.tier-C { border-color: #444; background: #111; color: #666; }
+.tier-S { border-color: #9b59b6; background: #1a0f2e; color: #9b59b6; }
+.score-num { font-size: 17px; line-height: 1; }
+.score-tier { font-size: 10px; opacity: 0.7; }
 
 .card-main { flex: 1; min-width: 0; }
-.company-name { font-size: 17px; font-weight: 700; color: #fff; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.company-name { font-size: 16px; font-weight: 700; color: #fff; }
 .company-name a { color: inherit; text-decoration: none; }
 .company-name a:hover { color: #f7931a; }
-.company-meta { display: flex; align-items: center; gap: 8px; margin-top: 4px; flex-wrap: wrap; }
-.meta-tag { font-size: 11px; color: #666; background: #141420; border: 1px solid #1e1e2e; border-radius: 4px; padding: 2px 7px; }
-.meta-tag.ind { color: #888; }
-.btc-angle { font-size: 12px; color: #f7931a; margin-top: 6px; }
-.description { font-size: 13px; color: #777; margin-top: 8px; line-height: 1.5; }
+.company-meta { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 4px; }
+.meta-tag { font-size: 11px; color: #666; background: #141420; border: 1px solid #1e1e2e; border-radius: 4px; padding: 2px 6px; }
+.btc-angle { font-size: 12px; color: #f7931a88; margin-top: 5px; }
+.description { font-size: 12px; color: #666; margin-top: 6px; line-height: 1.5; }
 
-.card-links { display: flex; gap: 6px; margin-top: 8px; }
-.link-btn { display: inline-flex; align-items: center; gap: 4px; font-size: 11px; color: #555; background: #141420; border: 1px solid #1e1e2e; border-radius: 5px; padding: 3px 8px; text-decoration: none; transition: all 0.15s; }
+.news-hook { margin: 8px 18px 0; padding: 10px 12px; background: #0a0f18; border: 1px solid #1a2a3a; border-left: 3px solid #2980b9; border-radius: 0 8px 8px 0; }
+.news-hook-label { font-size: 10px; text-transform: uppercase; letter-spacing: 0.8px; color: #2980b9; font-weight: 700; margin-bottom: 4px; }
+.news-hook-headline { font-size: 12px; color: #aaa; line-height: 1.4; margin-bottom: 6px; }
+.news-hook-angle { font-size: 12px; color: #888; font-style: italic; line-height: 1.4; }
+.news-hook-angle strong { color: #ccc; font-style: normal; }
+
+.card-links { display: flex; gap: 5px; padding: 8px 18px 0; }
+.link-btn { display: inline-flex; align-items: center; gap: 3px; font-size: 11px; color: #555; background: #141420; border: 1px solid #1e1e2e; border-radius: 5px; padding: 3px 7px; text-decoration: none; transition: all 0.15s; }
 .link-btn:hover { border-color: #f7931a; color: #f7931a; }
 
-.card-fit { padding: 12px 20px; border-top: 1px solid #141420; background: #0a0a12; }
-.fit-label { font-size: 10px; color: #444; text-transform: uppercase; letter-spacing: 0.8px; margin-bottom: 8px; }
-.fit-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; }
+.card-fit { padding: 10px 18px; border-top: 1px solid #141420; background: #0a0a12; margin-top: 10px; }
+.fit-label { font-size: 10px; color: #333; text-transform: uppercase; letter-spacing: 0.8px; margin-bottom: 6px; }
+.fit-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; }
 .fit-item { text-align: center; }
-.fit-name { font-size: 10px; color: #555; margin-bottom: 4px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; }
-.fit-bar-bg { height: 4px; background: #1e1e2e; border-radius: 2px; margin-bottom: 3px; }
-.fit-bar { height: 4px; border-radius: 2px; transition: width 0.5s; }
+.fit-name { font-size: 10px; color: #444; margin-bottom: 3px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.4px; }
+.fit-bar-bg { height: 3px; background: #1a1a2a; border-radius: 2px; margin-bottom: 3px; }
+.fit-bar { height: 3px; border-radius: 2px; }
 .fit-bar.conf { background: #f7931a; }
 .fit-bar.media { background: #9b59b6; }
 .fit-bar.bmtv { background: #e74c3c; }
@@ -69,868 +74,655 @@ body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; b
 .fit-score.bmtv { color: #e74c3c; }
 .fit-score.bfc { color: #27ae60; }
 
-.card-actions { padding: 12px 20px; border-top: 1px solid #141420; display: flex; gap: 10px; }
-.action-btn { flex: 1; padding: 10px; border-radius: 10px; font-size: 14px; font-weight: 700; cursor: pointer; border: 2px solid; transition: all 0.15s; text-align: center; }
-.btn-contact { border-color: #27ae60; color: #27ae60; background: #0f1f0a; }
-.btn-contact:hover, .btn-contact.active { background: #27ae60; color: #fff; transform: scale(1.02); }
-.btn-delete { border-color: #e74c3c; color: #e74c3c; background: #1a0a0a; }
-.btn-delete:hover, .btn-delete.active { background: #e74c3c; color: #fff; transform: scale(1.02); }
-.btn-skip { flex: 0.4; border-color: #2a2a3e; color: #555; background: #111; }
-.btn-skip:hover { border-color: #555; color: #888; }
+.card-actions { padding: 10px 18px; border-top: 1px solid #141420; display: flex; gap: 8px; }
+.action-btn { flex: 1; padding: 9px; border-radius: 8px; font-size: 13px; font-weight: 700; cursor: pointer; border: 1.5px solid; transition: all 0.15s; text-align: center; }
+.btn-contact { border-color: #27ae60; color: #27ae60; background: #0a140d; }
+.btn-contact:hover { background: #27ae60; color: #fff; }
+.btn-delete { border-color: #e74c3c; color: #e74c3c; background: #140a0a; }
+.btn-delete:hover { background: #e74c3c; color: #fff; }
+.btn-skip { flex: 0.4; border-color: #222; color: #444; background: #0d0d14; font-size: 12px; }
+.btn-skip:hover { border-color: #444; color: #666; }
 
-.decided-badge { display: none; font-size: 13px; font-weight: 700; padding: 8px 14px; border-radius: 8px; text-align: center; }
-.card.decided-contact .decided-badge { display: block; background: #0f2a1a; color: #27ae60; border: 1px solid #27ae60; }
-.card.decided-delete .decided-badge { display: block; background: #2a0a0a; color: #e74c3c; border: 1px solid #e74c3c; }
-.card.decided-contact .card-actions { display: none; }
-.card.decided-delete .card-actions { display: none; }
+.decided-badge { display: none; padding: 8px 14px; font-size: 12px; font-weight: 700; text-align: center; }
+.card.decided-contact .decided-badge { display: block; color: #27ae60; }
+.card.decided-delete .decided-badge { display: block; color: #e74c3c; }
+.card.decided-contact .card-actions, .card.decided-delete .card-actions { display: none; }
 
-.summary-panel { max-width: 900px; margin: 0 auto 40px; padding: 0 16px; display: none; }
+.summary-panel { max-width: 860px; margin: 0 auto 40px; padding: 0 16px; display: none; }
 .summary-panel.visible { display: block; }
-.summary-box { background: #0f0f1a; border: 1px solid #2a2a3e; border-radius: 16px; padding: 24px; }
-.summary-title { font-size: 16px; font-weight: 700; color: #fff; margin-bottom: 16px; }
-.summary-section { margin-bottom: 16px; }
-.summary-section h4 { font-size: 12px; text-transform: uppercase; letter-spacing: 0.8px; margin-bottom: 8px; }
-.summary-section h4.contact { color: #27ae60; }
-.summary-section h4.delete { color: #e74c3c; }
-.summary-list { font-size: 13px; color: #aaa; line-height: 1.8; }
-.copy-btn { background: #f7931a; color: #000; border: none; border-radius: 8px; padding: 10px 20px; font-size: 13px; font-weight: 700; cursor: pointer; margin-top: 12px; }
+.summary-box { background: #0f0f1a; border: 1px solid #2a2a3e; border-radius: 14px; padding: 22px; }
+.summary-title { font-size: 15px; font-weight: 700; color: #fff; margin-bottom: 16px; }
+.sum-section { margin-bottom: 14px; }
+.sum-section h4 { font-size: 11px; text-transform: uppercase; letter-spacing: 0.8px; margin-bottom: 6px; }
+.sum-section h4.contact { color: #27ae60; }
+.sum-section h4.delete { color: #e74c3c; }
+.sum-list { font-size: 12px; color: #999; line-height: 1.9; }
+.copy-btn { background: #f7931a; color: #000; border: none; border-radius: 8px; padding: 9px 18px; font-size: 13px; font-weight: 700; cursor: pointer; margin-top: 10px; }
 .copy-btn:hover { background: #ffb347; }
 
-.done-bar { position: sticky; bottom: 0; background: #0d0d1a; border-top: 1px solid #1e1e2e; padding: 12px 24px; display: flex; align-items: center; justify-content: space-between; }
-.done-bar-msg { font-size: 13px; color: #666; }
-.done-bar-msg strong { color: #888; }
-.finish-btn { background: #f7931a; color: #000; border: none; border-radius: 8px; padding: 10px 20px; font-size: 13px; font-weight: 700; cursor: pointer; }
-.finish-btn:hover { background: #ffb347; }
-.finish-btn:disabled { background: #333; color: #666; cursor: default; }
-
-.btc-rel-dot { display: inline-block; width: 6px; height: 6px; border-radius: 50%; margin-right: 4px; }
-.rel-high { background: #f7931a; }
-.rel-med { background: #f39c12; }
-.rel-low { background: #2980b9; }
-.rel-none { background: #333; }
+.done-bar { position: fixed; bottom: 0; left: 0; right: 0; background: #0d0d1a; border-top: 1px solid #1e1e2e; padding: 10px 24px; display: flex; align-items: center; justify-content: space-between; z-index: 200; }
+.done-msg { font-size: 12px; color: #555; }
+.done-msg strong { color: #888; }
+.finish-btn { background: #f7931a; color: #000; border: none; border-radius: 8px; padding: 9px 18px; font-size: 13px; font-weight: 700; cursor: pointer; }
+.finish-btn:disabled { background: #222; color: #555; cursor: default; }
 </style>
 </head>
 <body>
 
 <div class="header">
   <div>
-    <div class="logo">&#9889; <span>CRM Hygiene</span> · Daily 20</div>
-    <div class="header-meta">April 3, 2026 &nbsp;·&nbsp; <strong id="remaining-count">2,567</strong> companies remaining</div>
+    <div class="logo">&#9889; <span>CRM Hygiene</span> &middot; Daily 20</div>
+    <div class="header-meta">April 3, 2026 &middot; <strong id="rem-count">2,567</strong> in queue</div>
   </div>
-  <div style="display:flex;align-items:center;gap:20px;">
+  <div class="header-right">
     <div class="decision-counter">
-      <span class="dc dc-contact">✅ <span id="contact-count">0</span> to contact</span>
-      <span class="dc dc-delete">🗑 <span id="delete-count">0</span> to delete</span>
+      <span class="dc dc-contact">&#10003; <span id="contact-count">0</span> contact</span>
+      <span class="dc dc-delete">&#128465; <span id="delete-count">0</span> delete</span>
     </div>
     <div class="progress-wrap">
-      <div class="progress-bar-bg"><div class="progress-bar" id="progress-bar" style="width:0%"></div></div>
-      <div class="progress-text" id="progress-text">0 / 20</div>
+      <div class="progress-bar-bg"><div class="progress-bar" id="prog-bar" style="width:0%"></div></div>
+      <div class="progress-text" id="prog-text">0/20</div>
     </div>
   </div>
 </div>
 
-<div class="cards-wrap" id="cards-wrap">
-
-  <div class="card" id="card-0" data-id="0" data-name="Gusto" data-hs="https://app.hubspot.com/contacts/242236444/record/0-2/316442458852">
+<div class="cards-wrap">
+  <div class="card" id="card-0" data-id="0" data-name="Gusto">
     <div class="card-top">
       <div class="score-ring tier-A">
         <span class="score-num">62</span>
         <span class="score-tier">A</span>
       </div>
       <div class="card-main">
-        <div class="company-name"><a href="https://app.hubspot.com/contacts/242236444/record/0-2/316442458852" target="_blank">Gusto</a>&nbsp;<span style="font-size:12px;color:#555;font-weight:400">gusto.com</span></div>
-        <div class="company-meta"><span class="meta-tag ind">Computer Software</span><span class="meta-tag">📍 San Francisco, United States</span><span class="meta-tag">👥 2.4K employees</span></div>
-        <div class="btc-angle"><span class="btc-rel-dot rel-none"></span>❓ Unclear fit — review manually</div>
+        <div class="company-name"><a href="https://app.hubspot.com/contacts/242236444/record/0-2/316442458852" target="_blank">Gusto</a> &nbsp;<span style='font-size:11px;color:#444'>gusto.com</span></div>
+        <div class="company-meta"><span class="meta-tag">Computer Software</span><span class="meta-tag">&#128205; San Francisco, United States</span><span class="meta-tag">&#128101; 2.4K</span></div>
+        <div class="btc-angle">💳 Fintech — stablecoin payroll launch Jan 2026</div>
         <div class="description">Gusto's people platform helps growing businesses onboard, pay, insure, and support their hardworking teams with payroll, benefits, and more.</div>
-        <div class="card-links"><a class="link-btn" href="https://app.hubspot.com/contacts/242236444/record/0-2/316442458852" target="_blank">🏠 HubSpot</a><a class="link-btn" href="https://linkedin.com/company/gustohq" target="_blank">in LinkedIn</a><a class="link-btn" href="https://gusto.com" target="_blank">🌐 Website</a></div>
       </div>
     </div>
+    <div class="news-hook">
+      <div class="news-hook-label">&#128240; News Hook</div>
+      <div class="news-hook-headline">🔥 Just launched stablecoin payroll with Zerohash (Jan 2026) + ChatGPT integration</div>
+      <div class="news-hook-angle"><strong>Outreach angle:</strong> Open with their crypto move — 'You're already in the stablecoin payroll space, Bitcoin 2026 is where your next enterprise partners are making decisions.'</div>
+    </div>
+    <div class="card-links"><a class="link-btn" href="https://app.hubspot.com/contacts/242236444/record/0-2/316442458852" target="_blank">&#127968; HubSpot</a><a class="link-btn" href="https://linkedin.com/company/gustohq" target="_blank">in LinkedIn</a><a class="link-btn" href="https://gusto.com" target="_blank">&#127760; Website</a></div>
     <div class="card-fit">
       <div class="fit-label">Product Fit</div>
       <div class="fit-grid">
-        <div class="fit-item">
-          <div class="fit-name">Conference</div>
-          <div class="fit-bar-bg"><div class="fit-bar conf" style="width:55%"></div></div>
-          <div class="fit-score conf">55</div>
-        </div>
-        <div class="fit-item">
-          <div class="fit-name">Media</div>
-          <div class="fit-bar-bg"><div class="fit-bar media" style="width:55%"></div></div>
-          <div class="fit-score media">55</div>
-        </div>
-        <div class="fit-item">
-          <div class="fit-name">BMTV</div>
-          <div class="fit-bar-bg"><div class="fit-bar bmtv" style="width:55%"></div></div>
-          <div class="fit-score bmtv">55</div>
-        </div>
-        <div class="fit-item">
-          <div class="fit-name">BFC</div>
-          <div class="fit-bar-bg"><div class="fit-bar bfc" style="width:60%"></div></div>
-          <div class="fit-score bfc">60</div>
-        </div>
+        <div class="fit-item"><div class="fit-name">Conference</div><div class="fit-bar-bg"><div class="fit-bar conf" style="width:55%"></div></div><div class="fit-score conf">55</div></div>
+        <div class="fit-item"><div class="fit-name">Media</div><div class="fit-bar-bg"><div class="fit-bar media" style="width:55%"></div></div><div class="fit-score media">55</div></div>
+        <div class="fit-item"><div class="fit-name">BMTV</div><div class="fit-bar-bg"><div class="fit-bar bmtv" style="width:55%"></div></div><div class="fit-score bmtv">55</div></div>
+        <div class="fit-item"><div class="fit-name">BFC</div><div class="fit-bar-bg"><div class="fit-bar bfc" style="width:60%"></div></div><div class="fit-score bfc">60</div></div>
       </div>
     </div>
     <div class="card-actions">
-      <button class="action-btn btn-contact" onclick="decide(0, 'contact')">✅ Add to Outreach</button>
-      <button class="action-btn btn-skip" onclick="decide(0, 'skip')">Skip</button>
-      <button class="action-btn btn-delete" onclick="decide(0, 'delete')">🗑 Tag Delete</button>
+      <button class="action-btn btn-contact" onclick="decide(0,'contact')">&#10003; Add to Outreach</button>
+      <button class="action-btn btn-skip" onclick="decide(0,'skip')">Skip</button>
+      <button class="action-btn btn-delete" onclick="decide(0,'delete')">&#128465; Tag Delete</button>
     </div>
     <div class="decided-badge" id="badge-0"></div>
   </div>
-
-  <div class="card" id="card-1" data-id="1" data-name="Teikoku Databank" data-hs="https://app.hubspot.com/contacts/242236444/record/0-2/316441028300">
+  <div class="card" id="card-1" data-id="1" data-name="Teikoku Databank">
     <div class="card-top">
       <div class="score-ring tier-A">
         <span class="score-num">62</span>
         <span class="score-tier">A</span>
       </div>
       <div class="card-main">
-        <div class="company-name"><a href="https://app.hubspot.com/contacts/242236444/record/0-2/316441028300" target="_blank">Teikoku Databank</a>&nbsp;<span style="font-size:12px;color:#555;font-weight:400">teikoku.com</span></div>
-        <div class="company-meta"><span class="meta-tag ind">Financial Services</span><span class="meta-tag">📍 New York, United States</span><span class="meta-tag">👥 20 employees</span></div>
-        <div class="btc-angle"><span class="btc-rel-dot rel-low"></span>❓ Unclear fit — review manually</div>
+        <div class="company-name"><a href="https://app.hubspot.com/contacts/242236444/record/0-2/316441028300" target="_blank">Teikoku Databank</a> &nbsp;<span style='font-size:11px;color:#444'>teikoku.com</span></div>
+        <div class="company-meta"><span class="meta-tag">Financial Services</span><span class="meta-tag">&#128205; New York, United States</span><span class="meta-tag">&#128101; 20</span></div>
+        <div class="btc-angle">💰 Investment/Finance — Japan Bitcoin ETF market angle</div>
         <div class="description">Teikoku Databank provides business credit reports, targeted business lists, and custom market research focused on Japan and global markets.</div>
-        <div class="card-links"><a class="link-btn" href="https://app.hubspot.com/contacts/242236444/record/0-2/316441028300" target="_blank">🏠 HubSpot</a><a class="link-btn" href="https://linkedin.com/company/teikoku-databank-america-inc" target="_blank">in LinkedIn</a><a class="link-btn" href="https://www.teikoku.com" target="_blank">🌐 Website</a></div>
       </div>
     </div>
+    <div class="news-hook">
+      <div class="news-hook-label">&#128240; News Hook</div>
+      <div class="news-hook-headline">🇯🇵 Japan-focused B2B intel firm — no specific recent news</div>
+      <div class="news-hook-angle"><strong>Outreach angle:</strong> Bitcoin adoption in Japan is surging post-ETF approval. Angle: 'Your Japanese enterprise clients are actively navigating digital asset exposure right now.'</div>
+    </div>
+    <div class="card-links"><a class="link-btn" href="https://app.hubspot.com/contacts/242236444/record/0-2/316441028300" target="_blank">&#127968; HubSpot</a><a class="link-btn" href="https://linkedin.com/company/teikoku-databank-america-inc" target="_blank">in LinkedIn</a><a class="link-btn" href="https://www.teikoku.com" target="_blank">&#127760; Website</a></div>
     <div class="card-fit">
       <div class="fit-label">Product Fit</div>
       <div class="fit-grid">
-        <div class="fit-item">
-          <div class="fit-name">Conference</div>
-          <div class="fit-bar-bg"><div class="fit-bar conf" style="width:60%"></div></div>
-          <div class="fit-score conf">60</div>
-        </div>
-        <div class="fit-item">
-          <div class="fit-name">Media</div>
-          <div class="fit-bar-bg"><div class="fit-bar media" style="width:65%"></div></div>
-          <div class="fit-score media">65</div>
-        </div>
-        <div class="fit-item">
-          <div class="fit-name">BMTV</div>
-          <div class="fit-bar-bg"><div class="fit-bar bmtv" style="width:10%"></div></div>
-          <div class="fit-score bmtv">10</div>
-        </div>
-        <div class="fit-item">
-          <div class="fit-name">BFC</div>
-          <div class="fit-bar-bg"><div class="fit-bar bfc" style="width:65%"></div></div>
-          <div class="fit-score bfc">65</div>
-        </div>
+        <div class="fit-item"><div class="fit-name">Conference</div><div class="fit-bar-bg"><div class="fit-bar conf" style="width:60%"></div></div><div class="fit-score conf">60</div></div>
+        <div class="fit-item"><div class="fit-name">Media</div><div class="fit-bar-bg"><div class="fit-bar media" style="width:65%"></div></div><div class="fit-score media">65</div></div>
+        <div class="fit-item"><div class="fit-name">BMTV</div><div class="fit-bar-bg"><div class="fit-bar bmtv" style="width:10%"></div></div><div class="fit-score bmtv">10</div></div>
+        <div class="fit-item"><div class="fit-name">BFC</div><div class="fit-bar-bg"><div class="fit-bar bfc" style="width:65%"></div></div><div class="fit-score bfc">65</div></div>
       </div>
     </div>
     <div class="card-actions">
-      <button class="action-btn btn-contact" onclick="decide(1, 'contact')">✅ Add to Outreach</button>
-      <button class="action-btn btn-skip" onclick="decide(1, 'skip')">Skip</button>
-      <button class="action-btn btn-delete" onclick="decide(1, 'delete')">🗑 Tag Delete</button>
+      <button class="action-btn btn-contact" onclick="decide(1,'contact')">&#10003; Add to Outreach</button>
+      <button class="action-btn btn-skip" onclick="decide(1,'skip')">Skip</button>
+      <button class="action-btn btn-delete" onclick="decide(1,'delete')">&#128465; Tag Delete</button>
     </div>
     <div class="decided-badge" id="badge-1"></div>
   </div>
-
-  <div class="card" id="card-2" data-id="2" data-name="Manna" data-hs="https://app.hubspot.com/contacts/242236444/record/0-2/316575787724">
+  <div class="card" id="card-2" data-id="2" data-name="Manna">
     <div class="card-top">
       <div class="score-ring tier-A">
         <span class="score-num">60</span>
         <span class="score-tier">A</span>
       </div>
       <div class="card-main">
-        <div class="company-name"><a href="https://app.hubspot.com/contacts/242236444/record/0-2/316575787724" target="_blank">Manna</a>&nbsp;<span style="font-size:12px;color:#555;font-weight:400">mannabitcoin.com</span></div>
-        <div class="company-meta"><span class="meta-tag ind">Computer Hardware</span><span class="meta-tag">👥 142 employees</span></div>
-        <div class="btc-angle"><span class="btc-rel-dot rel-med"></span>₿ Bitcoin-native company</div>
+        <div class="company-name"><a href="https://app.hubspot.com/contacts/242236444/record/0-2/316575787724" target="_blank">Manna</a> &nbsp;<span style='font-size:11px;color:#444'>mannabitcoin.com</span></div>
+        <div class="company-meta"><span class="meta-tag">Computer Hardware</span><span class="meta-tag">&#128101; 142</span></div>
+        <div class="btc-angle">₿ Bitcoin-native company</div>
         <div class="description">Manna provides a non-custodial Bitcoin wallet focused on security, privacy, and ease of use for managing and transacting with Bitcoin.</div>
-        <div class="card-links"><a class="link-btn" href="https://app.hubspot.com/contacts/242236444/record/0-2/316575787724" target="_blank">🏠 HubSpot</a><a class="link-btn" href="https://mannabitcoin.com" target="_blank">🌐 Website</a></div>
       </div>
     </div>
+    <div class="news-hook">
+      <div class="news-hook-label">&#128240; News Hook</div>
+      <div class="news-hook-headline">⚡ Non-custodial Bitcoin wallet seeing download surge after App Store delisting controversy</div>
+      <div class="news-hook-angle"><strong>Outreach angle:</strong> Self-custody movement tailwind. 'Your growth story is exactly what our Bitcoin 2026 audience comes to hear — 65,000 attendees, all holders.'</div>
+    </div>
+    <div class="card-links"><a class="link-btn" href="https://app.hubspot.com/contacts/242236444/record/0-2/316575787724" target="_blank">&#127968; HubSpot</a><a class="link-btn" href="https://mannabitcoin.com" target="_blank">&#127760; Website</a></div>
     <div class="card-fit">
       <div class="fit-label">Product Fit</div>
       <div class="fit-grid">
-        <div class="fit-item">
-          <div class="fit-name">Conference</div>
-          <div class="fit-bar-bg"><div class="fit-bar conf" style="width:90%"></div></div>
-          <div class="fit-score conf">90</div>
-        </div>
-        <div class="fit-item">
-          <div class="fit-name">Media</div>
-          <div class="fit-bar-bg"><div class="fit-bar media" style="width:88%"></div></div>
-          <div class="fit-score media">88</div>
-        </div>
-        <div class="fit-item">
-          <div class="fit-name">BMTV</div>
-          <div class="fit-bar-bg"><div class="fit-bar bmtv" style="width:80%"></div></div>
-          <div class="fit-score bmtv">80</div>
-        </div>
-        <div class="fit-item">
-          <div class="fit-name">BFC</div>
-          <div class="fit-bar-bg"><div class="fit-bar bfc" style="width:92%"></div></div>
-          <div class="fit-score bfc">92</div>
-        </div>
+        <div class="fit-item"><div class="fit-name">Conference</div><div class="fit-bar-bg"><div class="fit-bar conf" style="width:90%"></div></div><div class="fit-score conf">90</div></div>
+        <div class="fit-item"><div class="fit-name">Media</div><div class="fit-bar-bg"><div class="fit-bar media" style="width:88%"></div></div><div class="fit-score media">88</div></div>
+        <div class="fit-item"><div class="fit-name">BMTV</div><div class="fit-bar-bg"><div class="fit-bar bmtv" style="width:80%"></div></div><div class="fit-score bmtv">80</div></div>
+        <div class="fit-item"><div class="fit-name">BFC</div><div class="fit-bar-bg"><div class="fit-bar bfc" style="width:92%"></div></div><div class="fit-score bfc">92</div></div>
       </div>
     </div>
     <div class="card-actions">
-      <button class="action-btn btn-contact" onclick="decide(2, 'contact')">✅ Add to Outreach</button>
-      <button class="action-btn btn-skip" onclick="decide(2, 'skip')">Skip</button>
-      <button class="action-btn btn-delete" onclick="decide(2, 'delete')">🗑 Tag Delete</button>
+      <button class="action-btn btn-contact" onclick="decide(2,'contact')">&#10003; Add to Outreach</button>
+      <button class="action-btn btn-skip" onclick="decide(2,'skip')">Skip</button>
+      <button class="action-btn btn-delete" onclick="decide(2,'delete')">&#128465; Tag Delete</button>
     </div>
     <div class="decided-badge" id="badge-2"></div>
   </div>
-
-  <div class="card" id="card-3" data-id="3" data-name="Starwood Capital Group" data-hs="https://app.hubspot.com/contacts/242236444/record/0-2/316674456261">
+  <div class="card" id="card-3" data-id="3" data-name="Starwood Capital Group">
     <div class="card-top">
       <div class="score-ring tier-A">
         <span class="score-num">57</span>
         <span class="score-tier">A</span>
       </div>
       <div class="card-main">
-        <div class="company-name"><a href="https://app.hubspot.com/contacts/242236444/record/0-2/316674456261" target="_blank">Starwood Capital Group</a>&nbsp;<span style="font-size:12px;color:#555;font-weight:400">starwoodcapital.com</span></div>
-        <div class="company-meta"><span class="meta-tag ind">Real Estate</span><span class="meta-tag">📍 Miami Beach, United States</span><span class="meta-tag">💰 $1.5B</span><span class="meta-tag">👥 1.2K employees</span></div>
-        <div class="btc-angle"><span class="btc-rel-dot rel-low"></span>💰 Investment/Finance — Bitcoin ETF angle</div>
-        <div class="description">Starwood Capital is a private investment firm that specializes in opportunistic investments across various asset classes and geographies, adapting its strategies based on evolving ...</div>
-        <div class="card-links"><a class="link-btn" href="https://app.hubspot.com/contacts/242236444/record/0-2/316674456261" target="_blank">🏠 HubSpot</a><a class="link-btn" href="https://linkedin.com/company/starwood-capital-group" target="_blank">in LinkedIn</a></div>
+        <div class="company-name"><a href="https://app.hubspot.com/contacts/242236444/record/0-2/316674456261" target="_blank">Starwood Capital Group</a> &nbsp;<span style='font-size:11px;color:#444'>starwoodcapital.com</span></div>
+        <div class="company-meta"><span class="meta-tag">Real Estate / Private Investment</span><span class="meta-tag">&#128205; Miami Beach, United States</span><span class="meta-tag">&#128176; $1.5B</span><span class="meta-tag">&#128101; 1.2K</span></div>
+        <div class="btc-angle">₿ Bitcoin infrastructure — partnered with MARA mining</div>
+        <div class="description">Starwood Capital is a private investment firm specializing in opportunistic investments across various asset classes and geographies.</div>
       </div>
     </div>
+    <div class="news-hook">
+      <div class="news-hook-label">&#128240; News Hook</div>
+      <div class="news-hook-headline">🔥 Just partnered with MARA (Bitcoin miner) to build 1GW AI data center (Feb 2026)</div>
+      <div class="news-hook-angle"><strong>Outreach angle:</strong> Direct hook: 'You're already in bed with MARA on Bitcoin mining infrastructure — Bitcoin 2026 is where the institutional deal flow for that asset class happens.'</div>
+    </div>
+    <div class="card-links"><a class="link-btn" href="https://app.hubspot.com/contacts/242236444/record/0-2/316674456261" target="_blank">&#127968; HubSpot</a><a class="link-btn" href="https://linkedin.com/company/starwood-capital-group" target="_blank">in LinkedIn</a></div>
     <div class="card-fit">
       <div class="fit-label">Product Fit</div>
       <div class="fit-grid">
-        <div class="fit-item">
-          <div class="fit-name">Conference</div>
-          <div class="fit-bar-bg"><div class="fit-bar conf" style="width:75%"></div></div>
-          <div class="fit-score conf">75</div>
-        </div>
-        <div class="fit-item">
-          <div class="fit-name">Media</div>
-          <div class="fit-bar-bg"><div class="fit-bar media" style="width:65%"></div></div>
-          <div class="fit-score media">65</div>
-        </div>
-        <div class="fit-item">
-          <div class="fit-name">BMTV</div>
-          <div class="fit-bar-bg"><div class="fit-bar bmtv" style="width:60%"></div></div>
-          <div class="fit-score bmtv">60</div>
-        </div>
-        <div class="fit-item">
-          <div class="fit-name">BFC</div>
-          <div class="fit-bar-bg"><div class="fit-bar bfc" style="width:50%"></div></div>
-          <div class="fit-score bfc">50</div>
-        </div>
+        <div class="fit-item"><div class="fit-name">Conference</div><div class="fit-bar-bg"><div class="fit-bar conf" style="width:85%"></div></div><div class="fit-score conf">85</div></div>
+        <div class="fit-item"><div class="fit-name">Media</div><div class="fit-bar-bg"><div class="fit-bar media" style="width:70%"></div></div><div class="fit-score media">70</div></div>
+        <div class="fit-item"><div class="fit-name">BMTV</div><div class="fit-bar-bg"><div class="fit-bar bmtv" style="width:65%"></div></div><div class="fit-score bmtv">65</div></div>
+        <div class="fit-item"><div class="fit-name">BFC</div><div class="fit-bar-bg"><div class="fit-bar bfc" style="width:55%"></div></div><div class="fit-score bfc">55</div></div>
       </div>
     </div>
     <div class="card-actions">
-      <button class="action-btn btn-contact" onclick="decide(3, 'contact')">✅ Add to Outreach</button>
-      <button class="action-btn btn-skip" onclick="decide(3, 'skip')">Skip</button>
-      <button class="action-btn btn-delete" onclick="decide(3, 'delete')">🗑 Tag Delete</button>
+      <button class="action-btn btn-contact" onclick="decide(3,'contact')">&#10003; Add to Outreach</button>
+      <button class="action-btn btn-skip" onclick="decide(3,'skip')">Skip</button>
+      <button class="action-btn btn-delete" onclick="decide(3,'delete')">&#128465; Tag Delete</button>
     </div>
     <div class="decided-badge" id="badge-3"></div>
   </div>
-
-  <div class="card" id="card-4" data-id="4" data-name="SeedSigner" data-hs="https://app.hubspot.com/contacts/242236444/record/0-2/316486399720">
+  <div class="card" id="card-4" data-id="4" data-name="SeedSigner">
     <div class="card-top">
       <div class="score-ring tier-A">
         <span class="score-num">54</span>
         <span class="score-tier">A</span>
       </div>
       <div class="card-main">
-        <div class="company-name"><a href="https://app.hubspot.com/contacts/242236444/record/0-2/316486399720" target="_blank">SeedSigner</a>&nbsp;<span style="font-size:12px;color:#555;font-weight:400">seedsigner.com</span></div>
-        <div class="company-meta"><span class="meta-tag ind">Computer Hardware</span></div>
-        <div class="btc-angle"><span class="btc-rel-dot rel-med"></span>₿ Bitcoin-native company</div>
+        <div class="company-name"><a href="https://app.hubspot.com/contacts/242236444/record/0-2/316486399720" target="_blank">SeedSigner</a> &nbsp;<span style='font-size:11px;color:#444'>seedsigner.com</span></div>
+        <div class="company-meta"><span class="meta-tag">Computer Hardware</span></div>
+        <div class="btc-angle">₿ Bitcoin-native company</div>
         <div class="description">SeedSigner enables users to build their own air-gapped Bitcoin signing devices using off-the-shelf components to securely sign transactions offline.</div>
-        <div class="card-links"><a class="link-btn" href="https://app.hubspot.com/contacts/242236444/record/0-2/316486399720" target="_blank">🏠 HubSpot</a><a class="link-btn" href="https://seedsigner.com" target="_blank">🌐 Website</a></div>
       </div>
     </div>
+    <div class="news-hook">
+      <div class="news-hook-label">&#128240; News Hook</div>
+      <div class="news-hook-headline">🛠 Community-driven, open source — Bitcoin Magazine featured their DIY hardware wallet philosophy</div>
+      <div class="news-hook-angle"><strong>Outreach angle:</strong> Editorial hook: 'Bitcoin Magazine ran your story — we'd love to expand that into a Bitcoin 2026 stage slot or BFC partnership to reach the builder community.'</div>
+    </div>
+    <div class="card-links"><a class="link-btn" href="https://app.hubspot.com/contacts/242236444/record/0-2/316486399720" target="_blank">&#127968; HubSpot</a><a class="link-btn" href="https://seedsigner.com" target="_blank">&#127760; Website</a></div>
     <div class="card-fit">
       <div class="fit-label">Product Fit</div>
       <div class="fit-grid">
-        <div class="fit-item">
-          <div class="fit-name">Conference</div>
-          <div class="fit-bar-bg"><div class="fit-bar conf" style="width:90%"></div></div>
-          <div class="fit-score conf">90</div>
-        </div>
-        <div class="fit-item">
-          <div class="fit-name">Media</div>
-          <div class="fit-bar-bg"><div class="fit-bar media" style="width:88%"></div></div>
-          <div class="fit-score media">88</div>
-        </div>
-        <div class="fit-item">
-          <div class="fit-name">BMTV</div>
-          <div class="fit-bar-bg"><div class="fit-bar bmtv" style="width:80%"></div></div>
-          <div class="fit-score bmtv">80</div>
-        </div>
-        <div class="fit-item">
-          <div class="fit-name">BFC</div>
-          <div class="fit-bar-bg"><div class="fit-bar bfc" style="width:92%"></div></div>
-          <div class="fit-score bfc">92</div>
-        </div>
+        <div class="fit-item"><div class="fit-name">Conference</div><div class="fit-bar-bg"><div class="fit-bar conf" style="width:90%"></div></div><div class="fit-score conf">90</div></div>
+        <div class="fit-item"><div class="fit-name">Media</div><div class="fit-bar-bg"><div class="fit-bar media" style="width:88%"></div></div><div class="fit-score media">88</div></div>
+        <div class="fit-item"><div class="fit-name">BMTV</div><div class="fit-bar-bg"><div class="fit-bar bmtv" style="width:80%"></div></div><div class="fit-score bmtv">80</div></div>
+        <div class="fit-item"><div class="fit-name">BFC</div><div class="fit-bar-bg"><div class="fit-bar bfc" style="width:92%"></div></div><div class="fit-score bfc">92</div></div>
       </div>
     </div>
     <div class="card-actions">
-      <button class="action-btn btn-contact" onclick="decide(4, 'contact')">✅ Add to Outreach</button>
-      <button class="action-btn btn-skip" onclick="decide(4, 'skip')">Skip</button>
-      <button class="action-btn btn-delete" onclick="decide(4, 'delete')">🗑 Tag Delete</button>
+      <button class="action-btn btn-contact" onclick="decide(4,'contact')">&#10003; Add to Outreach</button>
+      <button class="action-btn btn-skip" onclick="decide(4,'skip')">Skip</button>
+      <button class="action-btn btn-delete" onclick="decide(4,'delete')">&#128465; Tag Delete</button>
     </div>
     <div class="decided-badge" id="badge-4"></div>
   </div>
-
-  <div class="card" id="card-5" data-id="5" data-name="Quantify Funds" data-hs="https://app.hubspot.com/contacts/242236444/record/0-2/316576504534">
+  <div class="card" id="card-5" data-id="5" data-name="Quantify Funds">
     <div class="card-top">
       <div class="score-ring tier-A">
         <span class="score-num">54</span>
         <span class="score-tier">A</span>
       </div>
       <div class="card-main">
-        <div class="company-name"><a href="https://app.hubspot.com/contacts/242236444/record/0-2/316576504534" target="_blank">Quantify Funds</a>&nbsp;<span style="font-size:12px;color:#555;font-weight:400">quantifyfundsetfs.com</span></div>
-        <div class="company-meta"><span class="meta-tag ind">Capital Markets</span><span class="meta-tag">👥 10 employees</span></div>
-        <div class="btc-angle"><span class="btc-rel-dot rel-med"></span>💰 Investment/Finance — Bitcoin ETF angle</div>
-        <div class="description">Quantify Funds provides diversified ETF investment solutions designed to optimize portfolio diversification and boost performance through expert, data-driven strategies.</div>
-        <div class="card-links"><a class="link-btn" href="https://app.hubspot.com/contacts/242236444/record/0-2/316576504534" target="_blank">🏠 HubSpot</a><a class="link-btn" href="https://www.quantifyfundsetfs.com" target="_blank">🌐 Website</a></div>
+        <div class="company-name"><a href="https://app.hubspot.com/contacts/242236444/record/0-2/316576504534" target="_blank">Quantify Funds</a> &nbsp;<span style='font-size:11px;color:#444'>quantifyfundsetfs.com</span></div>
+        <div class="company-meta"><span class="meta-tag">Capital Markets</span><span class="meta-tag">&#128101; 10</span></div>
+        <div class="btc-angle">💰 Investment/Finance — Bitcoin ETF angle</div>
+        <div class="description">Quantify Funds provides diversified ETF investment solutions designed to optimize portfolio diversification and boost performance.</div>
       </div>
     </div>
+    <div class="news-hook">
+      <div class="news-hook-label">&#128240; News Hook</div>
+      <div class="news-hook-headline">📈 Q1 ETF flows up 50% YoY — Bitcoin ETF category seeing institutional surge</div>
+      <div class="news-hook-angle"><strong>Outreach angle:</strong> Timing hook: 'With ETF flows at 5-year highs, Bitcoin 2026 puts Quantify Funds in front of the RIAs and allocators actively moving into digital assets.'</div>
+    </div>
+    <div class="card-links"><a class="link-btn" href="https://app.hubspot.com/contacts/242236444/record/0-2/316576504534" target="_blank">&#127968; HubSpot</a><a class="link-btn" href="https://www.quantifyfundsetfs.com" target="_blank">&#127760; Website</a></div>
     <div class="card-fit">
       <div class="fit-label">Product Fit</div>
       <div class="fit-grid">
-        <div class="fit-item">
-          <div class="fit-name">Conference</div>
-          <div class="fit-bar-bg"><div class="fit-bar conf" style="width:60%"></div></div>
-          <div class="fit-score conf">60</div>
-        </div>
-        <div class="fit-item">
-          <div class="fit-name">Media</div>
-          <div class="fit-bar-bg"><div class="fit-bar media" style="width:65%"></div></div>
-          <div class="fit-score media">65</div>
-        </div>
-        <div class="fit-item">
-          <div class="fit-name">BMTV</div>
-          <div class="fit-bar-bg"><div class="fit-bar bmtv" style="width:10%"></div></div>
-          <div class="fit-score bmtv">10</div>
-        </div>
-        <div class="fit-item">
-          <div class="fit-name">BFC</div>
-          <div class="fit-bar-bg"><div class="fit-bar bfc" style="width:65%"></div></div>
-          <div class="fit-score bfc">65</div>
-        </div>
+        <div class="fit-item"><div class="fit-name">Conference</div><div class="fit-bar-bg"><div class="fit-bar conf" style="width:60%"></div></div><div class="fit-score conf">60</div></div>
+        <div class="fit-item"><div class="fit-name">Media</div><div class="fit-bar-bg"><div class="fit-bar media" style="width:65%"></div></div><div class="fit-score media">65</div></div>
+        <div class="fit-item"><div class="fit-name">BMTV</div><div class="fit-bar-bg"><div class="fit-bar bmtv" style="width:10%"></div></div><div class="fit-score bmtv">10</div></div>
+        <div class="fit-item"><div class="fit-name">BFC</div><div class="fit-bar-bg"><div class="fit-bar bfc" style="width:65%"></div></div><div class="fit-score bfc">65</div></div>
       </div>
     </div>
     <div class="card-actions">
-      <button class="action-btn btn-contact" onclick="decide(5, 'contact')">✅ Add to Outreach</button>
-      <button class="action-btn btn-skip" onclick="decide(5, 'skip')">Skip</button>
-      <button class="action-btn btn-delete" onclick="decide(5, 'delete')">🗑 Tag Delete</button>
+      <button class="action-btn btn-contact" onclick="decide(5,'contact')">&#10003; Add to Outreach</button>
+      <button class="action-btn btn-skip" onclick="decide(5,'skip')">Skip</button>
+      <button class="action-btn btn-delete" onclick="decide(5,'delete')">&#128465; Tag Delete</button>
     </div>
     <div class="decided-badge" id="badge-5"></div>
   </div>
-
-  <div class="card" id="card-6" data-id="6" data-name="Decoy" data-hs="https://app.hubspot.com/contacts/242236444/record/0-2/316575786730">
+  <div class="card" id="card-6" data-id="6" data-name="Decoy">
     <div class="card-top">
       <div class="score-ring tier-A">
         <span class="score-num">54</span>
         <span class="score-tier">A</span>
       </div>
       <div class="card-main">
-        <div class="company-name"><a href="https://app.hubspot.com/contacts/242236444/record/0-2/316575786730" target="_blank">Decoy</a>&nbsp;<span style="font-size:12px;color:#555;font-weight:400">decoywalletapp.com</span></div>
-        <div class="company-meta"></div>
-        <div class="btc-angle"><span class="btc-rel-dot rel-med"></span>₿ Bitcoin-native company</div>
-        <div class="description">Decoy wallet app - privacy focused Bitcoin wallet.</div>
-        <div class="card-links"><a class="link-btn" href="https://app.hubspot.com/contacts/242236444/record/0-2/316575786730" target="_blank">🏠 HubSpot</a><a class="link-btn" href="https://www.decoywalletapp.com" target="_blank">🌐 Website</a></div>
+        <div class="company-name"><a href="https://app.hubspot.com/contacts/242236444/record/0-2/316575786730" target="_blank">Decoy</a> &nbsp;<span style='font-size:11px;color:#444'>decoywalletapp.com</span></div>
+        <div class="company-meta"><span class="meta-tag">Bitcoin Privacy</span></div>
+        <div class="btc-angle">₿ Bitcoin-native company</div>
+        <div class="description">Decoy wallet app — privacy-focused Bitcoin wallet with plausible deniability features.</div>
       </div>
     </div>
+    <div class="news-hook">
+      <div class="news-hook-label">&#128240; News Hook</div>
+      <div class="news-hook-headline">🔐 Plausible deniability wallets trending in 2026 self-custody coverage roundups</div>
+      <div class="news-hook-angle"><strong>Outreach angle:</strong> Product fit hook: 'Bitcoin Magazine is covering privacy wallet tools — your product deserves placement in our Bitcoin 2026 expo floor and editorial.'</div>
+    </div>
+    <div class="card-links"><a class="link-btn" href="https://app.hubspot.com/contacts/242236444/record/0-2/316575786730" target="_blank">&#127968; HubSpot</a><a class="link-btn" href="https://www.decoywalletapp.com" target="_blank">&#127760; Website</a></div>
     <div class="card-fit">
       <div class="fit-label">Product Fit</div>
       <div class="fit-grid">
-        <div class="fit-item">
-          <div class="fit-name">Conference</div>
-          <div class="fit-bar-bg"><div class="fit-bar conf" style="width:90%"></div></div>
-          <div class="fit-score conf">90</div>
-        </div>
-        <div class="fit-item">
-          <div class="fit-name">Media</div>
-          <div class="fit-bar-bg"><div class="fit-bar media" style="width:88%"></div></div>
-          <div class="fit-score media">88</div>
-        </div>
-        <div class="fit-item">
-          <div class="fit-name">BMTV</div>
-          <div class="fit-bar-bg"><div class="fit-bar bmtv" style="width:80%"></div></div>
-          <div class="fit-score bmtv">80</div>
-        </div>
-        <div class="fit-item">
-          <div class="fit-name">BFC</div>
-          <div class="fit-bar-bg"><div class="fit-bar bfc" style="width:92%"></div></div>
-          <div class="fit-score bfc">92</div>
-        </div>
+        <div class="fit-item"><div class="fit-name">Conference</div><div class="fit-bar-bg"><div class="fit-bar conf" style="width:90%"></div></div><div class="fit-score conf">90</div></div>
+        <div class="fit-item"><div class="fit-name">Media</div><div class="fit-bar-bg"><div class="fit-bar media" style="width:88%"></div></div><div class="fit-score media">88</div></div>
+        <div class="fit-item"><div class="fit-name">BMTV</div><div class="fit-bar-bg"><div class="fit-bar bmtv" style="width:80%"></div></div><div class="fit-score bmtv">80</div></div>
+        <div class="fit-item"><div class="fit-name">BFC</div><div class="fit-bar-bg"><div class="fit-bar bfc" style="width:92%"></div></div><div class="fit-score bfc">92</div></div>
       </div>
     </div>
     <div class="card-actions">
-      <button class="action-btn btn-contact" onclick="decide(6, 'contact')">✅ Add to Outreach</button>
-      <button class="action-btn btn-skip" onclick="decide(6, 'skip')">Skip</button>
-      <button class="action-btn btn-delete" onclick="decide(6, 'delete')">🗑 Tag Delete</button>
+      <button class="action-btn btn-contact" onclick="decide(6,'contact')">&#10003; Add to Outreach</button>
+      <button class="action-btn btn-skip" onclick="decide(6,'skip')">Skip</button>
+      <button class="action-btn btn-delete" onclick="decide(6,'delete')">&#128465; Tag Delete</button>
     </div>
     <div class="decided-badge" id="badge-6"></div>
   </div>
-
-  <div class="card" id="card-7" data-id="7" data-name="Linear" data-hs="https://app.hubspot.com/contacts/242236444/record/0-2/316441751236">
+  <div class="card" id="card-7" data-id="7" data-name="Linear">
     <div class="card-top">
       <div class="score-ring tier-A">
         <span class="score-num">48</span>
         <span class="score-tier">A</span>
       </div>
       <div class="card-main">
-        <div class="company-name"><a href="https://app.hubspot.com/contacts/242236444/record/0-2/316441751236" target="_blank">Linear</a>&nbsp;<span style="font-size:12px;color:#555;font-weight:400">linear.app</span></div>
-        <div class="company-meta"><span class="meta-tag ind">Computer Software</span><span class="meta-tag">📍 Covina, United States</span><span class="meta-tag">👥 135 employees</span></div>
-        <div class="btc-angle"><span class="btc-rel-dot rel-none"></span>🛠 Tech company — builder audience</div>
-        <div class="description">Linear helps teams plan and build products with AI agents.</div>
-        <div class="card-links"><a class="link-btn" href="https://app.hubspot.com/contacts/242236444/record/0-2/316441751236" target="_blank">🏠 HubSpot</a><a class="link-btn" href="https://linkedin.com/company/linearapp" target="_blank">in LinkedIn</a><a class="link-btn" href="https://linear.app" target="_blank">🌐 Website</a></div>
+        <div class="company-name"><a href="https://app.hubspot.com/contacts/242236444/record/0-2/316441751236" target="_blank">Linear</a> &nbsp;<span style='font-size:11px;color:#444'>linear.app</span></div>
+        <div class="company-meta"><span class="meta-tag">Computer Software</span><span class="meta-tag">&#128205; Covina, United States</span><span class="meta-tag">&#128101; 135</span></div>
+        <div class="btc-angle">🛠 Tech company — builder audience</div>
+        <div class="description">Linear helps teams plan and build products with AI agents. Just launched Linear Agent — CEO declared 'issue tracking is dead.'</div>
       </div>
     </div>
+    <div class="news-hook">
+      <div class="news-hook-label">&#128240; News Hook</div>
+      <div class="news-hook-headline">🚀 Just launched 'Linear Agent' (April 1, 2026) — CEO declared 'issue tracking is dead'</div>
+      <div class="news-hook-angle"><strong>Outreach angle:</strong> Builder audience hook: 'Your dev-first brand is exactly what sponsors at Bitcoin Founders Conference target — 2,000 technical founders, no fluff.'</div>
+    </div>
+    <div class="card-links"><a class="link-btn" href="https://app.hubspot.com/contacts/242236444/record/0-2/316441751236" target="_blank">&#127968; HubSpot</a><a class="link-btn" href="https://linkedin.com/company/linearapp" target="_blank">in LinkedIn</a><a class="link-btn" href="https://linear.app" target="_blank">&#127760; Website</a></div>
     <div class="card-fit">
       <div class="fit-label">Product Fit</div>
       <div class="fit-grid">
-        <div class="fit-item">
-          <div class="fit-name">Conference</div>
-          <div class="fit-bar-bg"><div class="fit-bar conf" style="width:45%"></div></div>
-          <div class="fit-score conf">45</div>
-        </div>
-        <div class="fit-item">
-          <div class="fit-name">Media</div>
-          <div class="fit-bar-bg"><div class="fit-bar media" style="width:55%"></div></div>
-          <div class="fit-score media">55</div>
-        </div>
-        <div class="fit-item">
-          <div class="fit-name">BMTV</div>
-          <div class="fit-bar-bg"><div class="fit-bar bmtv" style="width:40%"></div></div>
-          <div class="fit-score bmtv">40</div>
-        </div>
-        <div class="fit-item">
-          <div class="fit-name">BFC</div>
-          <div class="fit-bar-bg"><div class="fit-bar bfc" style="width:60%"></div></div>
-          <div class="fit-score bfc">60</div>
-        </div>
+        <div class="fit-item"><div class="fit-name">Conference</div><div class="fit-bar-bg"><div class="fit-bar conf" style="width:45%"></div></div><div class="fit-score conf">45</div></div>
+        <div class="fit-item"><div class="fit-name">Media</div><div class="fit-bar-bg"><div class="fit-bar media" style="width:55%"></div></div><div class="fit-score media">55</div></div>
+        <div class="fit-item"><div class="fit-name">BMTV</div><div class="fit-bar-bg"><div class="fit-bar bmtv" style="width:40%"></div></div><div class="fit-score bmtv">40</div></div>
+        <div class="fit-item"><div class="fit-name">BFC</div><div class="fit-bar-bg"><div class="fit-bar bfc" style="width:75%"></div></div><div class="fit-score bfc">75</div></div>
       </div>
     </div>
     <div class="card-actions">
-      <button class="action-btn btn-contact" onclick="decide(7, 'contact')">✅ Add to Outreach</button>
-      <button class="action-btn btn-skip" onclick="decide(7, 'skip')">Skip</button>
-      <button class="action-btn btn-delete" onclick="decide(7, 'delete')">🗑 Tag Delete</button>
+      <button class="action-btn btn-contact" onclick="decide(7,'contact')">&#10003; Add to Outreach</button>
+      <button class="action-btn btn-skip" onclick="decide(7,'skip')">Skip</button>
+      <button class="action-btn btn-delete" onclick="decide(7,'delete')">&#128465; Tag Delete</button>
     </div>
     <div class="decided-badge" id="badge-7"></div>
   </div>
-
-  <div class="card" id="card-8" data-id="8" data-name="NSA - National Cryptologic Museum" data-hs="https://app.hubspot.com/contacts/242236444/record/0-2/316676617933">
+  <div class="card" id="card-8" data-id="8" data-name="NSA - National Cryptologic Museum">
     <div class="card-top">
       <div class="score-ring tier-B">
         <span class="score-num">42</span>
         <span class="score-tier">B</span>
       </div>
       <div class="card-main">
-        <div class="company-name"><a href="https://app.hubspot.com/contacts/242236444/record/0-2/316676617933" target="_blank">NSA - National Cryptologic Museum</a>&nbsp;<span style="font-size:12px;color:#555;font-weight:400">nsa.gov</span></div>
-        <div class="company-meta"><span class="meta-tag ind">Defense Space</span><span class="meta-tag">📍 Fort Meade, United States</span><span class="meta-tag">👥 30.0K employees</span></div>
-        <div class="btc-angle"><span class="btc-rel-dot rel-none"></span>❓ Unclear fit — review manually</div>
-        <div class="description">NSA is a top intelligence agency excelling in SIGINT and cybersecurity, safeguarding America's information through cryptanalysis and research/analysis.</div>
-        <div class="card-links"><a class="link-btn" href="https://app.hubspot.com/contacts/242236444/record/0-2/316676617933" target="_blank">🏠 HubSpot</a><a class="link-btn" href="https://linkedin.com/company/national-security-agency" target="_blank">in LinkedIn</a><a class="link-btn" href="https://www.nsa.gov" target="_blank">🌐 Website</a></div>
+        <div class="company-name"><a href="https://app.hubspot.com/contacts/242236444/record/0-2/316676617933" target="_blank">NSA - National Cryptologic Museum</a> &nbsp;<span style='font-size:11px;color:#444'>nsa.gov</span></div>
+        <div class="company-meta"><span class="meta-tag">Defense / Government</span><span class="meta-tag">&#128205; Fort Meade, United States</span><span class="meta-tag">&#128101; 30.0K</span></div>
+        <div class="btc-angle">❓ Unclear fit — review manually</div>
+        <div class="description">NSA is a top intelligence agency excelling in SIGINT and cybersecurity, safeguarding America's information.</div>
       </div>
     </div>
+    <div class="news-hook">
+      <div class="news-hook-label">&#128240; News Hook</div>
+      <div class="news-hook-headline">🏛 Federal agency — no relevant recent news or sponsor fit</div>
+      <div class="news-hook-angle"><strong>Outreach angle:</strong> Low priority outreach target.</div>
+    </div>
+    <div class="card-links"><a class="link-btn" href="https://app.hubspot.com/contacts/242236444/record/0-2/316676617933" target="_blank">&#127968; HubSpot</a><a class="link-btn" href="https://linkedin.com/company/national-security-agency" target="_blank">in LinkedIn</a><a class="link-btn" href="https://www.nsa.gov" target="_blank">&#127760; Website</a></div>
     <div class="card-fit">
       <div class="fit-label">Product Fit</div>
       <div class="fit-grid">
-        <div class="fit-item">
-          <div class="fit-name">Conference</div>
-          <div class="fit-bar-bg"><div class="fit-bar conf" style="width:20%"></div></div>
-          <div class="fit-score conf">20</div>
-        </div>
-        <div class="fit-item">
-          <div class="fit-name">Media</div>
-          <div class="fit-bar-bg"><div class="fit-bar media" style="width:15%"></div></div>
-          <div class="fit-score media">15</div>
-        </div>
-        <div class="fit-item">
-          <div class="fit-name">BMTV</div>
-          <div class="fit-bar-bg"><div class="fit-bar bmtv" style="width:10%"></div></div>
-          <div class="fit-score bmtv">10</div>
-        </div>
-        <div class="fit-item">
-          <div class="fit-name">BFC</div>
-          <div class="fit-bar-bg"><div class="fit-bar bfc" style="width:10%"></div></div>
-          <div class="fit-score bfc">10</div>
-        </div>
+        <div class="fit-item"><div class="fit-name">Conference</div><div class="fit-bar-bg"><div class="fit-bar conf" style="width:20%"></div></div><div class="fit-score conf">20</div></div>
+        <div class="fit-item"><div class="fit-name">Media</div><div class="fit-bar-bg"><div class="fit-bar media" style="width:15%"></div></div><div class="fit-score media">15</div></div>
+        <div class="fit-item"><div class="fit-name">BMTV</div><div class="fit-bar-bg"><div class="fit-bar bmtv" style="width:10%"></div></div><div class="fit-score bmtv">10</div></div>
+        <div class="fit-item"><div class="fit-name">BFC</div><div class="fit-bar-bg"><div class="fit-bar bfc" style="width:10%"></div></div><div class="fit-score bfc">10</div></div>
       </div>
     </div>
     <div class="card-actions">
-      <button class="action-btn btn-contact" onclick="decide(8, 'contact')">✅ Add to Outreach</button>
-      <button class="action-btn btn-skip" onclick="decide(8, 'skip')">Skip</button>
-      <button class="action-btn btn-delete" onclick="decide(8, 'delete')">🗑 Tag Delete</button>
+      <button class="action-btn btn-contact" onclick="decide(8,'contact')">&#10003; Add to Outreach</button>
+      <button class="action-btn btn-skip" onclick="decide(8,'skip')">Skip</button>
+      <button class="action-btn btn-delete" onclick="decide(8,'delete')">&#128465; Tag Delete</button>
     </div>
     <div class="decided-badge" id="badge-8"></div>
   </div>
-
-  <div class="card" id="card-9" data-id="9" data-name="Vibe" data-hs="https://app.hubspot.com/contacts/242236444/record/0-2/316439595758">
+  <div class="card" id="card-9" data-id="9" data-name="Vibe">
     <div class="card-top">
       <div class="score-ring tier-B">
         <span class="score-num">31</span>
         <span class="score-tier">B</span>
       </div>
       <div class="card-main">
-        <div class="company-name"><a href="https://app.hubspot.com/contacts/242236444/record/0-2/316439595758" target="_blank">Vibe</a>&nbsp;<span style="font-size:12px;color:#555;font-weight:400">vibe.co</span></div>
-        <div class="company-meta"><span class="meta-tag ind">Broadcast Media</span><span class="meta-tag">📍 Chicago, United States</span><span class="meta-tag">👥 45 employees</span></div>
-        <div class="btc-angle"><span class="btc-rel-dot rel-none"></span>📺 Media/Ad — BMTV partnership angle</div>
-        <div class="description">Vibe enables users to run TV ads in just 5 minutes across 500+ premium channels with starting prices at $500.</div>
-        <div class="card-links"><a class="link-btn" href="https://app.hubspot.com/contacts/242236444/record/0-2/316439595758" target="_blank">🏠 HubSpot</a><a class="link-btn" href="https://linkedin.com/company/vibe-ctv-ott" target="_blank">in LinkedIn</a></div>
+        <div class="company-name"><a href="https://app.hubspot.com/contacts/242236444/record/0-2/316439595758" target="_blank">Vibe</a> &nbsp;<span style='font-size:11px;color:#444'>vibe.co</span></div>
+        <div class="company-meta"><span class="meta-tag">Broadcast Media / CTV</span><span class="meta-tag">&#128205; Chicago, United States</span><span class="meta-tag">&#128101; 45</span></div>
+        <div class="btc-angle">📺 Media/Ad — BMTV partnership angle</div>
+        <div class="description">Vibe enables users to run TV ads across 500+ premium CTV channels. Raised $50M Series B at $400M valuation.</div>
       </div>
     </div>
+    <div class="news-hook">
+      <div class="news-hook-label">&#128240; News Hook</div>
+      <div class="news-hook-headline">💰 Raised $50M Series B at $400M valuation, $100M ARR run rate (Sept 2025)</div>
+      <div class="news-hook-angle"><strong>Outreach angle:</strong> Money in the bank hook: 'You just closed $50M with growth budgets to deploy — BMTV reaches 500K Bitcoin-native viewers you can't find on any other CTV platform.'</div>
+    </div>
+    <div class="card-links"><a class="link-btn" href="https://app.hubspot.com/contacts/242236444/record/0-2/316439595758" target="_blank">&#127968; HubSpot</a><a class="link-btn" href="https://linkedin.com/company/vibe-ctv-ott" target="_blank">in LinkedIn</a></div>
     <div class="card-fit">
       <div class="fit-label">Product Fit</div>
       <div class="fit-grid">
-        <div class="fit-item">
-          <div class="fit-name">Conference</div>
-          <div class="fit-bar-bg"><div class="fit-bar conf" style="width:50%"></div></div>
-          <div class="fit-score conf">50</div>
-        </div>
-        <div class="fit-item">
-          <div class="fit-name">Media</div>
-          <div class="fit-bar-bg"><div class="fit-bar media" style="width:45%"></div></div>
-          <div class="fit-score media">45</div>
-        </div>
-        <div class="fit-item">
-          <div class="fit-name">BMTV</div>
-          <div class="fit-bar-bg"><div class="fit-bar bmtv" style="width:85%"></div></div>
-          <div class="fit-score bmtv">85</div>
-        </div>
-        <div class="fit-item">
-          <div class="fit-name">BFC</div>
-          <div class="fit-bar-bg"><div class="fit-bar bfc" style="width:10%"></div></div>
-          <div class="fit-score bfc">10</div>
-        </div>
+        <div class="fit-item"><div class="fit-name">Conference</div><div class="fit-bar-bg"><div class="fit-bar conf" style="width:50%"></div></div><div class="fit-score conf">50</div></div>
+        <div class="fit-item"><div class="fit-name">Media</div><div class="fit-bar-bg"><div class="fit-bar media" style="width:45%"></div></div><div class="fit-score media">45</div></div>
+        <div class="fit-item"><div class="fit-name">BMTV</div><div class="fit-bar-bg"><div class="fit-bar bmtv" style="width:85%"></div></div><div class="fit-score bmtv">85</div></div>
+        <div class="fit-item"><div class="fit-name">BFC</div><div class="fit-bar-bg"><div class="fit-bar bfc" style="width:10%"></div></div><div class="fit-score bfc">10</div></div>
       </div>
     </div>
     <div class="card-actions">
-      <button class="action-btn btn-contact" onclick="decide(9, 'contact')">✅ Add to Outreach</button>
-      <button class="action-btn btn-skip" onclick="decide(9, 'skip')">Skip</button>
-      <button class="action-btn btn-delete" onclick="decide(9, 'delete')">🗑 Tag Delete</button>
+      <button class="action-btn btn-contact" onclick="decide(9,'contact')">&#10003; Add to Outreach</button>
+      <button class="action-btn btn-skip" onclick="decide(9,'skip')">Skip</button>
+      <button class="action-btn btn-delete" onclick="decide(9,'delete')">&#128465; Tag Delete</button>
     </div>
     <div class="decided-badge" id="badge-9"></div>
   </div>
-
-  <div class="card" id="card-10" data-id="10" data-name="Windsurf" data-hs="https://app.hubspot.com/contacts/242236444/record/0-2/316483515083">
+  <div class="card" id="card-10" data-id="10" data-name="Windsurf">
     <div class="card-top">
       <div class="score-ring tier-B">
         <span class="score-num">29</span>
         <span class="score-tier">B</span>
       </div>
       <div class="card-main">
-        <div class="company-name"><a href="https://app.hubspot.com/contacts/242236444/record/0-2/316483515083" target="_blank">Windsurf</a>&nbsp;<span style="font-size:12px;color:#555;font-weight:400">windsurf.com</span></div>
-        <div class="company-meta"><span class="meta-tag">👥 240 employees</span></div>
-        <div class="btc-angle"><span class="btc-rel-dot rel-none"></span>🛠 Tech company — builder audience</div>
-        <div class="description">Windsurf is an AI coding assistant that provides advanced support for developers and enterprises by offering an AI-native IDE experience designed to keep developers in flow.</div>
-        <div class="card-links"><a class="link-btn" href="https://app.hubspot.com/contacts/242236444/record/0-2/316483515083" target="_blank">🏠 HubSpot</a><a class="link-btn" href="https://linkedin.com/company/windsurf" target="_blank">in LinkedIn</a><a class="link-btn" href="https://windsurf.com" target="_blank">🌐 Website</a></div>
+        <div class="company-name"><a href="https://app.hubspot.com/contacts/242236444/record/0-2/316483515083" target="_blank">Windsurf</a> &nbsp;<span style='font-size:11px;color:#444'>windsurf.com</span></div>
+        <div class="company-meta"><span class="meta-tag">AI Dev Tools</span><span class="meta-tag">&#128101; 240</span></div>
+        <div class="btc-angle">🛠 Tech company — builder audience</div>
+        <div class="description">AI coding IDE — acquired by Cognition for $250M, now part of $10.2B company. #1 ranked AI IDE with 1M+ users.</div>
       </div>
     </div>
+    <div class="news-hook">
+      <div class="news-hook-label">&#128240; News Hook</div>
+      <div class="news-hook-headline">🦄 Acquired by Cognition ($250M, now $10.2B company), #1 ranked AI IDE in market</div>
+      <div class="news-hook-angle"><strong>Outreach angle:</strong> New budget cycle hook: 'Post-acquisition Cognition is scaling enterprise marketing — Bitcoin Founders Conference is where 2,000 technical founders make their tooling decisions.'</div>
+    </div>
+    <div class="card-links"><a class="link-btn" href="https://app.hubspot.com/contacts/242236444/record/0-2/316483515083" target="_blank">&#127968; HubSpot</a><a class="link-btn" href="https://linkedin.com/company/windsurf" target="_blank">in LinkedIn</a><a class="link-btn" href="https://windsurf.com" target="_blank">&#127760; Website</a></div>
     <div class="card-fit">
       <div class="fit-label">Product Fit</div>
       <div class="fit-grid">
-        <div class="fit-item">
-          <div class="fit-name">Conference</div>
-          <div class="fit-bar-bg"><div class="fit-bar conf" style="width:45%"></div></div>
-          <div class="fit-score conf">45</div>
-        </div>
-        <div class="fit-item">
-          <div class="fit-name">Media</div>
-          <div class="fit-bar-bg"><div class="fit-bar media" style="width:55%"></div></div>
-          <div class="fit-score media">55</div>
-        </div>
-        <div class="fit-item">
-          <div class="fit-name">BMTV</div>
-          <div class="fit-bar-bg"><div class="fit-bar bmtv" style="width:40%"></div></div>
-          <div class="fit-score bmtv">40</div>
-        </div>
-        <div class="fit-item">
-          <div class="fit-name">BFC</div>
-          <div class="fit-bar-bg"><div class="fit-bar bfc" style="width:60%"></div></div>
-          <div class="fit-score bfc">60</div>
-        </div>
+        <div class="fit-item"><div class="fit-name">Conference</div><div class="fit-bar-bg"><div class="fit-bar conf" style="width:45%"></div></div><div class="fit-score conf">45</div></div>
+        <div class="fit-item"><div class="fit-name">Media</div><div class="fit-bar-bg"><div class="fit-bar media" style="width:55%"></div></div><div class="fit-score media">55</div></div>
+        <div class="fit-item"><div class="fit-name">BMTV</div><div class="fit-bar-bg"><div class="fit-bar bmtv" style="width:40%"></div></div><div class="fit-score bmtv">40</div></div>
+        <div class="fit-item"><div class="fit-name">BFC</div><div class="fit-bar-bg"><div class="fit-bar bfc" style="width:75%"></div></div><div class="fit-score bfc">75</div></div>
       </div>
     </div>
     <div class="card-actions">
-      <button class="action-btn btn-contact" onclick="decide(10, 'contact')">✅ Add to Outreach</button>
-      <button class="action-btn btn-skip" onclick="decide(10, 'skip')">Skip</button>
-      <button class="action-btn btn-delete" onclick="decide(10, 'delete')">🗑 Tag Delete</button>
+      <button class="action-btn btn-contact" onclick="decide(10,'contact')">&#10003; Add to Outreach</button>
+      <button class="action-btn btn-skip" onclick="decide(10,'skip')">Skip</button>
+      <button class="action-btn btn-delete" onclick="decide(10,'delete')">&#128465; Tag Delete</button>
     </div>
     <div class="decided-badge" id="badge-10"></div>
   </div>
-
-  <div class="card" id="card-11" data-id="11" data-name="Console.com" data-hs="https://app.hubspot.com/contacts/242236444/record/0-2/316442458848">
+  <div class="card" id="card-11" data-id="11" data-name="Console.com">
     <div class="card-top">
       <div class="score-ring tier-C">
         <span class="score-num">19</span>
         <span class="score-tier">C</span>
       </div>
       <div class="card-main">
-        <div class="company-name"><a href="https://app.hubspot.com/contacts/242236444/record/0-2/316442458848" target="_blank">Console.com</a>&nbsp;<span style="font-size:12px;color:#555;font-weight:400">console.com</span></div>
-        <div class="company-meta"><span class="meta-tag">📍 Austria</span><span class="meta-tag">👥 3 employees</span></div>
-        <div class="btc-angle"><span class="btc-rel-dot rel-none"></span>🛠 Tech company — builder audience</div>
+        <div class="company-name"><a href="https://app.hubspot.com/contacts/242236444/record/0-2/316442458848" target="_blank">Console.com</a> &nbsp;<span style='font-size:11px;color:#444'>console.com</span></div>
+        <div class="company-meta"><span class="meta-tag">Cloud / Infrastructure</span><span class="meta-tag">&#128205; Austria</span><span class="meta-tag">&#128101; 3</span></div>
+        <div class="btc-angle">🛠 Tech company — builder audience</div>
         <div class="description">Console Group provides cloud computing services and solutions for businesses.</div>
-        <div class="card-links"><a class="link-btn" href="https://app.hubspot.com/contacts/242236444/record/0-2/316442458848" target="_blank">🏠 HubSpot</a><a class="link-btn" href="https://linkedin.com/company/console-australia-new-zealand" target="_blank">in LinkedIn</a><a class="link-btn" href="https://www.console.com" target="_blank">🌐 Website</a></div>
       </div>
     </div>
+    <div class="news-hook">
+      <div class="news-hook-label">&#128240; News Hook</div>
+      <div class="news-hook-headline">☁️ Cloud infrastructure platform, 3 employees — early stage, no major news</div>
+      <div class="news-hook-angle"><strong>Outreach angle:</strong> Low priority. If pursuing: BFC angle for founder-stage company.</div>
+    </div>
+    <div class="card-links"><a class="link-btn" href="https://app.hubspot.com/contacts/242236444/record/0-2/316442458848" target="_blank">&#127968; HubSpot</a><a class="link-btn" href="https://linkedin.com/company/console-australia-new-zealand" target="_blank">in LinkedIn</a><a class="link-btn" href="https://www.console.com" target="_blank">&#127760; Website</a></div>
     <div class="card-fit">
       <div class="fit-label">Product Fit</div>
       <div class="fit-grid">
-        <div class="fit-item">
-          <div class="fit-name">Conference</div>
-          <div class="fit-bar-bg"><div class="fit-bar conf" style="width:45%"></div></div>
-          <div class="fit-score conf">45</div>
-        </div>
-        <div class="fit-item">
-          <div class="fit-name">Media</div>
-          <div class="fit-bar-bg"><div class="fit-bar media" style="width:55%"></div></div>
-          <div class="fit-score media">55</div>
-        </div>
-        <div class="fit-item">
-          <div class="fit-name">BMTV</div>
-          <div class="fit-bar-bg"><div class="fit-bar bmtv" style="width:40%"></div></div>
-          <div class="fit-score bmtv">40</div>
-        </div>
-        <div class="fit-item">
-          <div class="fit-name">BFC</div>
-          <div class="fit-bar-bg"><div class="fit-bar bfc" style="width:75%"></div></div>
-          <div class="fit-score bfc">75</div>
-        </div>
+        <div class="fit-item"><div class="fit-name">Conference</div><div class="fit-bar-bg"><div class="fit-bar conf" style="width:45%"></div></div><div class="fit-score conf">45</div></div>
+        <div class="fit-item"><div class="fit-name">Media</div><div class="fit-bar-bg"><div class="fit-bar media" style="width:55%"></div></div><div class="fit-score media">55</div></div>
+        <div class="fit-item"><div class="fit-name">BMTV</div><div class="fit-bar-bg"><div class="fit-bar bmtv" style="width:40%"></div></div><div class="fit-score bmtv">40</div></div>
+        <div class="fit-item"><div class="fit-name">BFC</div><div class="fit-bar-bg"><div class="fit-bar bfc" style="width:75%"></div></div><div class="fit-score bfc">75</div></div>
       </div>
     </div>
     <div class="card-actions">
-      <button class="action-btn btn-contact" onclick="decide(11, 'contact')">✅ Add to Outreach</button>
-      <button class="action-btn btn-skip" onclick="decide(11, 'skip')">Skip</button>
-      <button class="action-btn btn-delete" onclick="decide(11, 'delete')">🗑 Tag Delete</button>
+      <button class="action-btn btn-contact" onclick="decide(11,'contact')">&#10003; Add to Outreach</button>
+      <button class="action-btn btn-skip" onclick="decide(11,'skip')">Skip</button>
+      <button class="action-btn btn-delete" onclick="decide(11,'delete')">&#128465; Tag Delete</button>
     </div>
     <div class="decided-badge" id="badge-11"></div>
   </div>
-
-  <div class="card" id="card-12" data-id="12" data-name="Gambly" data-hs="https://app.hubspot.com/contacts/242236444/record/0-2/316482788032">
+  <div class="card" id="card-12" data-id="12" data-name="Gambly">
     <div class="card-top">
       <div class="score-ring tier-C">
         <span class="score-num">19</span>
         <span class="score-tier">C</span>
       </div>
       <div class="card-main">
-        <div class="company-name"><a href="https://app.hubspot.com/contacts/242236444/record/0-2/316482788032" target="_blank">Gambly</a>&nbsp;<span style="font-size:12px;color:#555;font-weight:400">gambly.com</span></div>
-        <div class="company-meta"><span class="meta-tag ind">Hospitality</span><span class="meta-tag">📍 Chile</span><span class="meta-tag">👥 6 employees</span></div>
-        <div class="btc-angle"><span class="btc-rel-dot rel-none"></span>❓ Unclear fit — review manually</div>
-        <div class="description">Gambly provides a platform for sports betting.</div>
-        <div class="card-links"><a class="link-btn" href="https://app.hubspot.com/contacts/242236444/record/0-2/316482788032" target="_blank">🏠 HubSpot</a><a class="link-btn" href="https://linkedin.com/company/gambly" target="_blank">in LinkedIn</a><a class="link-btn" href="https://gambly.com" target="_blank">🌐 Website</a></div>
+        <div class="company-name"><a href="https://app.hubspot.com/contacts/242236444/record/0-2/316482788032" target="_blank">Gambly</a> &nbsp;<span style='font-size:11px;color:#444'>gambly.com</span></div>
+        <div class="company-meta"><span class="meta-tag">Sports Betting</span><span class="meta-tag">&#128205; Chile</span><span class="meta-tag">&#128101; 6</span></div>
+        <div class="btc-angle">❓ Unclear fit — review manually</div>
+        <div class="description">Gambly provides a sports betting platform with +EV bets, one-click betslips, and expert opinions.</div>
       </div>
     </div>
+    <div class="news-hook">
+      <div class="news-hook-label">&#128240; News Hook</div>
+      <div class="news-hook-headline">🎲 Sports betting platform (Chile) — no Bitcoin angle, poor conference fit</div>
+      <div class="news-hook-angle"><strong>Outreach angle:</strong> Consider tagging for deletion — no obvious hook across any BTC Media product.</div>
+    </div>
+    <div class="card-links"><a class="link-btn" href="https://app.hubspot.com/contacts/242236444/record/0-2/316482788032" target="_blank">&#127968; HubSpot</a><a class="link-btn" href="https://linkedin.com/company/gambly" target="_blank">in LinkedIn</a><a class="link-btn" href="https://gambly.com" target="_blank">&#127760; Website</a></div>
     <div class="card-fit">
       <div class="fit-label">Product Fit</div>
       <div class="fit-grid">
-        <div class="fit-item">
-          <div class="fit-name">Conference</div>
-          <div class="fit-bar-bg"><div class="fit-bar conf" style="width:20%"></div></div>
-          <div class="fit-score conf">20</div>
-        </div>
-        <div class="fit-item">
-          <div class="fit-name">Media</div>
-          <div class="fit-bar-bg"><div class="fit-bar media" style="width:15%"></div></div>
-          <div class="fit-score media">15</div>
-        </div>
-        <div class="fit-item">
-          <div class="fit-name">BMTV</div>
-          <div class="fit-bar-bg"><div class="fit-bar bmtv" style="width:10%"></div></div>
-          <div class="fit-score bmtv">10</div>
-        </div>
-        <div class="fit-item">
-          <div class="fit-name">BFC</div>
-          <div class="fit-bar-bg"><div class="fit-bar bfc" style="width:10%"></div></div>
-          <div class="fit-score bfc">10</div>
-        </div>
+        <div class="fit-item"><div class="fit-name">Conference</div><div class="fit-bar-bg"><div class="fit-bar conf" style="width:20%"></div></div><div class="fit-score conf">20</div></div>
+        <div class="fit-item"><div class="fit-name">Media</div><div class="fit-bar-bg"><div class="fit-bar media" style="width:15%"></div></div><div class="fit-score media">15</div></div>
+        <div class="fit-item"><div class="fit-name">BMTV</div><div class="fit-bar-bg"><div class="fit-bar bmtv" style="width:10%"></div></div><div class="fit-score bmtv">10</div></div>
+        <div class="fit-item"><div class="fit-name">BFC</div><div class="fit-bar-bg"><div class="fit-bar bfc" style="width:10%"></div></div><div class="fit-score bfc">10</div></div>
       </div>
     </div>
     <div class="card-actions">
-      <button class="action-btn btn-contact" onclick="decide(12, 'contact')">✅ Add to Outreach</button>
-      <button class="action-btn btn-skip" onclick="decide(12, 'skip')">Skip</button>
-      <button class="action-btn btn-delete" onclick="decide(12, 'delete')">🗑 Tag Delete</button>
+      <button class="action-btn btn-contact" onclick="decide(12,'contact')">&#10003; Add to Outreach</button>
+      <button class="action-btn btn-skip" onclick="decide(12,'skip')">Skip</button>
+      <button class="action-btn btn-delete" onclick="decide(12,'delete')">&#128465; Tag Delete</button>
     </div>
     <div class="decided-badge" id="badge-12"></div>
   </div>
-
-  <div class="card" id="card-13" data-id="13" data-name="Lake Champlain Community Sailing Center" data-hs="https://app.hubspot.com/contacts/242236444/record/0-2/316492950219">
+  <div class="card" id="card-13" data-id="13" data-name="Lake Champlain Community Sailing Center">
     <div class="card-top">
       <div class="score-ring tier-C">
         <span class="score-num">19</span>
         <span class="score-tier">C</span>
       </div>
       <div class="card-main">
-        <div class="company-name"><a href="https://app.hubspot.com/contacts/242236444/record/0-2/316492950219" target="_blank">Lake Champlain Community Sailing Center</a>&nbsp;<span style="font-size:12px;color:#555;font-weight:400">communitysailingcenter.org</span></div>
-        <div class="company-meta"><span class="meta-tag">📍 Burlington, United States</span><span class="meta-tag">👥 20 employees</span></div>
-        <div class="btc-angle"><span class="btc-rel-dot rel-none"></span>❓ Unclear fit — review manually</div>
-        <div class="description">The Lake Champlain Community Sailing Center provides accessible sailing opportunities and life lessons for all ages and skill levels.</div>
-        <div class="card-links"><a class="link-btn" href="https://app.hubspot.com/contacts/242236444/record/0-2/316492950219" target="_blank">🏠 HubSpot</a><a class="link-btn" href="https://linkedin.com/company/2001372" target="_blank">in LinkedIn</a></div>
+        <div class="company-name"><a href="https://app.hubspot.com/contacts/242236444/record/0-2/316492950219" target="_blank">Lake Champlain Community Sailing Center</a> &nbsp;<span style='font-size:11px;color:#444'>communitysailingcenter.org</span></div>
+        <div class="company-meta"><span class="meta-tag">Non-profit / Community</span><span class="meta-tag">&#128205; Burlington, United States</span><span class="meta-tag">&#128101; 20</span></div>
+        <div class="btc-angle">❓ Unclear fit — review manually</div>
+        <div class="description">Community sailing center providing accessible sailing opportunities and life lessons for all ages.</div>
       </div>
     </div>
+    <div class="news-hook">
+      <div class="news-hook-label">&#128240; News Hook</div>
+      <div class="news-hook-headline">⛵ Community sailing center — zero sponsor fit</div>
+      <div class="news-hook-angle"><strong>Outreach angle:</strong> Tag for deletion.</div>
+    </div>
+    <div class="card-links"><a class="link-btn" href="https://app.hubspot.com/contacts/242236444/record/0-2/316492950219" target="_blank">&#127968; HubSpot</a><a class="link-btn" href="https://linkedin.com/company/2001372" target="_blank">in LinkedIn</a></div>
     <div class="card-fit">
       <div class="fit-label">Product Fit</div>
       <div class="fit-grid">
-        <div class="fit-item">
-          <div class="fit-name">Conference</div>
-          <div class="fit-bar-bg"><div class="fit-bar conf" style="width:20%"></div></div>
-          <div class="fit-score conf">20</div>
-        </div>
-        <div class="fit-item">
-          <div class="fit-name">Media</div>
-          <div class="fit-bar-bg"><div class="fit-bar media" style="width:15%"></div></div>
-          <div class="fit-score media">15</div>
-        </div>
-        <div class="fit-item">
-          <div class="fit-name">BMTV</div>
-          <div class="fit-bar-bg"><div class="fit-bar bmtv" style="width:10%"></div></div>
-          <div class="fit-score bmtv">10</div>
-        </div>
-        <div class="fit-item">
-          <div class="fit-name">BFC</div>
-          <div class="fit-bar-bg"><div class="fit-bar bfc" style="width:10%"></div></div>
-          <div class="fit-score bfc">10</div>
-        </div>
+        <div class="fit-item"><div class="fit-name">Conference</div><div class="fit-bar-bg"><div class="fit-bar conf" style="width:10%"></div></div><div class="fit-score conf">10</div></div>
+        <div class="fit-item"><div class="fit-name">Media</div><div class="fit-bar-bg"><div class="fit-bar media" style="width:10%"></div></div><div class="fit-score media">10</div></div>
+        <div class="fit-item"><div class="fit-name">BMTV</div><div class="fit-bar-bg"><div class="fit-bar bmtv" style="width:10%"></div></div><div class="fit-score bmtv">10</div></div>
+        <div class="fit-item"><div class="fit-name">BFC</div><div class="fit-bar-bg"><div class="fit-bar bfc" style="width:10%"></div></div><div class="fit-score bfc">10</div></div>
       </div>
     </div>
     <div class="card-actions">
-      <button class="action-btn btn-contact" onclick="decide(13, 'contact')">✅ Add to Outreach</button>
-      <button class="action-btn btn-skip" onclick="decide(13, 'skip')">Skip</button>
-      <button class="action-btn btn-delete" onclick="decide(13, 'delete')">🗑 Tag Delete</button>
+      <button class="action-btn btn-contact" onclick="decide(13,'contact')">&#10003; Add to Outreach</button>
+      <button class="action-btn btn-skip" onclick="decide(13,'skip')">Skip</button>
+      <button class="action-btn btn-delete" onclick="decide(13,'delete')">&#128465; Tag Delete</button>
     </div>
     <div class="decided-badge" id="badge-13"></div>
   </div>
-
-  <div class="card" id="card-14" data-id="14" data-name="LP Prosper" data-hs="https://app.hubspot.com/contacts/242236444/record/0-2/316486398676">
+  <div class="card" id="card-14" data-id="14" data-name="LP Prosper">
     <div class="card-top">
       <div class="score-ring tier-C">
         <span class="score-num">17</span>
         <span class="score-tier">C</span>
       </div>
       <div class="card-main">
-        <div class="company-name"><a href="https://app.hubspot.com/contacts/242236444/record/0-2/316486398676" target="_blank">LP Prosper</a>&nbsp;<span style="font-size:12px;color:#555;font-weight:400">lpprosper.com</span></div>
-        <div class="company-meta"><span class="meta-tag ind">Food Beverages</span></div>
-        <div class="btc-angle"><span class="btc-rel-dot rel-none"></span>❓ Unclear fit — review manually</div>
-        <div class="description">LP Prosper provides consulting in the international food sector.</div>
-        <div class="card-links"><a class="link-btn" href="https://app.hubspot.com/contacts/242236444/record/0-2/316486398676" target="_blank">🏠 HubSpot</a><a class="link-btn" href="https://linkedin.com/company/lp-prosper" target="_blank">in LinkedIn</a><a class="link-btn" href="https://lpprosper.com" target="_blank">🌐 Website</a></div>
+        <div class="company-name"><a href="https://app.hubspot.com/contacts/242236444/record/0-2/316486398676" target="_blank">LP Prosper</a> &nbsp;<span style='font-size:11px;color:#444'>lpprosper.com</span></div>
+        <div class="company-meta"><span class="meta-tag">Food & Beverages</span></div>
+        <div class="btc-angle">❓ Unclear fit — review manually</div>
+        <div class="description">LP Prosper provides consulting and training in the international food sector.</div>
       </div>
     </div>
+    <div class="news-hook">
+      <div class="news-hook-label">&#128240; News Hook</div>
+      <div class="news-hook-headline">🥦 International food sector consulting — no Bitcoin angle</div>
+      <div class="news-hook-angle"><strong>Outreach angle:</strong> Tag for deletion.</div>
+    </div>
+    <div class="card-links"><a class="link-btn" href="https://app.hubspot.com/contacts/242236444/record/0-2/316486398676" target="_blank">&#127968; HubSpot</a><a class="link-btn" href="https://linkedin.com/company/lp-prosper" target="_blank">in LinkedIn</a><a class="link-btn" href="https://lpprosper.com" target="_blank">&#127760; Website</a></div>
     <div class="card-fit">
       <div class="fit-label">Product Fit</div>
       <div class="fit-grid">
-        <div class="fit-item">
-          <div class="fit-name">Conference</div>
-          <div class="fit-bar-bg"><div class="fit-bar conf" style="width:20%"></div></div>
-          <div class="fit-score conf">20</div>
-        </div>
-        <div class="fit-item">
-          <div class="fit-name">Media</div>
-          <div class="fit-bar-bg"><div class="fit-bar media" style="width:15%"></div></div>
-          <div class="fit-score media">15</div>
-        </div>
-        <div class="fit-item">
-          <div class="fit-name">BMTV</div>
-          <div class="fit-bar-bg"><div class="fit-bar bmtv" style="width:10%"></div></div>
-          <div class="fit-score bmtv">10</div>
-        </div>
-        <div class="fit-item">
-          <div class="fit-name">BFC</div>
-          <div class="fit-bar-bg"><div class="fit-bar bfc" style="width:10%"></div></div>
-          <div class="fit-score bfc">10</div>
-        </div>
+        <div class="fit-item"><div class="fit-name">Conference</div><div class="fit-bar-bg"><div class="fit-bar conf" style="width:10%"></div></div><div class="fit-score conf">10</div></div>
+        <div class="fit-item"><div class="fit-name">Media</div><div class="fit-bar-bg"><div class="fit-bar media" style="width:10%"></div></div><div class="fit-score media">10</div></div>
+        <div class="fit-item"><div class="fit-name">BMTV</div><div class="fit-bar-bg"><div class="fit-bar bmtv" style="width:10%"></div></div><div class="fit-score bmtv">10</div></div>
+        <div class="fit-item"><div class="fit-name">BFC</div><div class="fit-bar-bg"><div class="fit-bar bfc" style="width:10%"></div></div><div class="fit-score bfc">10</div></div>
       </div>
     </div>
     <div class="card-actions">
-      <button class="action-btn btn-contact" onclick="decide(14, 'contact')">✅ Add to Outreach</button>
-      <button class="action-btn btn-skip" onclick="decide(14, 'skip')">Skip</button>
-      <button class="action-btn btn-delete" onclick="decide(14, 'delete')">🗑 Tag Delete</button>
+      <button class="action-btn btn-contact" onclick="decide(14,'contact')">&#10003; Add to Outreach</button>
+      <button class="action-btn btn-skip" onclick="decide(14,'skip')">Skip</button>
+      <button class="action-btn btn-delete" onclick="decide(14,'delete')">&#128465; Tag Delete</button>
     </div>
     <div class="decided-badge" id="badge-14"></div>
   </div>
-
-  <div class="card" id="card-15" data-id="15" data-name="Nada Nada" data-hs="https://app.hubspot.com/contacts/242236444/record/0-2/316802221794">
+  <div class="card" id="card-15" data-id="15" data-name="Nada Nada">
     <div class="card-top">
       <div class="score-ring tier-C">
         <span class="score-num">12</span>
         <span class="score-tier">C</span>
       </div>
       <div class="card-main">
-        <div class="company-name"><a href="https://app.hubspot.com/contacts/242236444/record/0-2/316802221794" target="_blank">Nada Nada</a>&nbsp;<span style="font-size:12px;color:#555;font-weight:400">nadanada.me</span></div>
-        <div class="company-meta"></div>
-        <div class="btc-angle"><span class="btc-rel-dot rel-med"></span>🔗 Crypto-adjacent</div>
-        <div class="description">nadanada provides privacy protection through its no-log VPN, eSIM, and disposable phone numbers services, allowing users to pay with cryptocurrencies for anonymity.</div>
-        <div class="card-links"><a class="link-btn" href="https://app.hubspot.com/contacts/242236444/record/0-2/316802221794" target="_blank">🏠 HubSpot</a><a class="link-btn" href="https://nadanada.me" target="_blank">🌐 Website</a></div>
+        <div class="company-name"><a href="https://app.hubspot.com/contacts/242236444/record/0-2/316802221794" target="_blank">Nada Nada</a> &nbsp;<span style='font-size:11px;color:#444'>nadanada.me</span></div>
+        <div class="company-meta"><span class="meta-tag">Privacy / Bitcoin Infrastructure</span></div>
+        <div class="btc-angle">🔗 Crypto-adjacent — Lightning-native, Bitcoin Magazine alumni</div>
+        <div class="description">Privacy VPN/eSIM/phone numbers — pays with Lightning Network. Rebranded from LNVPN, featured in Bitcoin Magazine. Founded at Oslo Freedom Forum.</div>
       </div>
     </div>
+    <div class="news-hook">
+      <div class="news-hook-label">&#128240; News Hook</div>
+      <div class="news-hook-headline">🔥 Featured in Bitcoin Magazine after LNVPN rebrand — founded at Oslo Freedom Forum for activists in oppressive regimes</div>
+      <div class="news-hook-angle"><strong>Outreach angle:</strong> Already in our editorial ecosystem. 'You've been featured in Bitcoin Mag — Bitcoin 2026 is the next step. Let's talk about sponsor visibility across all BTC Media properties.'</div>
+    </div>
+    <div class="card-links"><a class="link-btn" href="https://app.hubspot.com/contacts/242236444/record/0-2/316802221794" target="_blank">&#127968; HubSpot</a><a class="link-btn" href="https://nadanada.me" target="_blank">&#127760; Website</a></div>
     <div class="card-fit">
       <div class="fit-label">Product Fit</div>
       <div class="fit-grid">
-        <div class="fit-item">
-          <div class="fit-name">Conference</div>
-          <div class="fit-bar-bg"><div class="fit-bar conf" style="width:90%"></div></div>
-          <div class="fit-score conf">90</div>
-        </div>
-        <div class="fit-item">
-          <div class="fit-name">Media</div>
-          <div class="fit-bar-bg"><div class="fit-bar media" style="width:88%"></div></div>
-          <div class="fit-score media">88</div>
-        </div>
-        <div class="fit-item">
-          <div class="fit-name">BMTV</div>
-          <div class="fit-bar-bg"><div class="fit-bar bmtv" style="width:80%"></div></div>
-          <div class="fit-score bmtv">80</div>
-        </div>
-        <div class="fit-item">
-          <div class="fit-name">BFC</div>
-          <div class="fit-bar-bg"><div class="fit-bar bfc" style="width:92%"></div></div>
-          <div class="fit-score bfc">92</div>
-        </div>
+        <div class="fit-item"><div class="fit-name">Conference</div><div class="fit-bar-bg"><div class="fit-bar conf" style="width:90%"></div></div><div class="fit-score conf">90</div></div>
+        <div class="fit-item"><div class="fit-name">Media</div><div class="fit-bar-bg"><div class="fit-bar media" style="width:95%"></div></div><div class="fit-score media">95</div></div>
+        <div class="fit-item"><div class="fit-name">BMTV</div><div class="fit-bar-bg"><div class="fit-bar bmtv" style="width:80%"></div></div><div class="fit-score bmtv">80</div></div>
+        <div class="fit-item"><div class="fit-name">BFC</div><div class="fit-bar-bg"><div class="fit-bar bfc" style="width:92%"></div></div><div class="fit-score bfc">92</div></div>
       </div>
     </div>
     <div class="card-actions">
-      <button class="action-btn btn-contact" onclick="decide(15, 'contact')">✅ Add to Outreach</button>
-      <button class="action-btn btn-skip" onclick="decide(15, 'skip')">Skip</button>
-      <button class="action-btn btn-delete" onclick="decide(15, 'delete')">🗑 Tag Delete</button>
+      <button class="action-btn btn-contact" onclick="decide(15,'contact')">&#10003; Add to Outreach</button>
+      <button class="action-btn btn-skip" onclick="decide(15,'skip')">Skip</button>
+      <button class="action-btn btn-delete" onclick="decide(15,'delete')">&#128465; Tag Delete</button>
     </div>
     <div class="decided-badge" id="badge-15"></div>
   </div>
-
-  <div class="card" id="card-16" data-id="16" data-name="BankWyse" data-hs="https://app.hubspot.com/contacts/242236444/record/0-2/316676621046">
+  <div class="card" id="card-16" data-id="16" data-name="BankWyse">
     <div class="card-top">
       <div class="score-ring tier-C">
         <span class="score-num">11</span>
         <span class="score-tier">C</span>
       </div>
       <div class="card-main">
-        <div class="company-name"><a href="https://app.hubspot.com/contacts/242236444/record/0-2/316676621046" target="_blank">BankWyse</a>&nbsp;<span style="font-size:12px;color:#555;font-weight:400">bankwyse.com</span></div>
-        <div class="company-meta"><span class="meta-tag">📍 Cheyenne, United States</span><span class="meta-tag">👥 5 employees</span></div>
-        <div class="btc-angle"><span class="btc-rel-dot rel-low"></span>💳 Fintech — digital payments angle</div>
-        <div class="description">BankWyse provides innovative financial services tailored for the digital age, focusing on modern banking solutions.</div>
-        <div class="card-links"><a class="link-btn" href="https://app.hubspot.com/contacts/242236444/record/0-2/316676621046" target="_blank">🏠 HubSpot</a></div>
+        <div class="company-name"><a href="https://app.hubspot.com/contacts/242236444/record/0-2/316676621046" target="_blank">BankWyse</a> &nbsp;<span style='font-size:11px;color:#444'>bankwyse.com</span></div>
+        <div class="company-meta"><span class="meta-tag">Digital Asset Banking</span><span class="meta-tag">&#128205; Cheyenne, United States</span><span class="meta-tag">&#128101; 5</span></div>
+        <div class="btc-angle">💳 Fintech — digital asset bank/custody</div>
+        <div class="description">BankWyse provides integrated banking and regulated custody solutions for digital assets, bridging traditional and digital economies.</div>
       </div>
     </div>
+    <div class="news-hook">
+      <div class="news-hook-label">&#128240; News Hook</div>
+      <div class="news-hook-headline">🏦 Digital asset bank bridging traditional + crypto custody — 7 employees, founded 2021</div>
+      <div class="news-hook-angle"><strong>Outreach angle:</strong> Emerging category hook: 'De novo digital asset bank launches are up — Bitcoin 2026 is where your target institutional clients are vetting custody providers.'</div>
+    </div>
+    <div class="card-links"><a class="link-btn" href="https://app.hubspot.com/contacts/242236444/record/0-2/316676621046" target="_blank">&#127968; HubSpot</a></div>
     <div class="card-fit">
       <div class="fit-label">Product Fit</div>
       <div class="fit-grid">
-        <div class="fit-item">
-          <div class="fit-name">Conference</div>
-          <div class="fit-bar-bg"><div class="fit-bar conf" style="width:45%"></div></div>
-          <div class="fit-score conf">45</div>
-        </div>
-        <div class="fit-item">
-          <div class="fit-name">Media</div>
-          <div class="fit-bar-bg"><div class="fit-bar media" style="width:55%"></div></div>
-          <div class="fit-score media">55</div>
-        </div>
-        <div class="fit-item">
-          <div class="fit-name">BMTV</div>
-          <div class="fit-bar-bg"><div class="fit-bar bmtv" style="width:40%"></div></div>
-          <div class="fit-score bmtv">40</div>
-        </div>
-        <div class="fit-item">
-          <div class="fit-name">BFC</div>
-          <div class="fit-bar-bg"><div class="fit-bar bfc" style="width:75%"></div></div>
-          <div class="fit-score bfc">75</div>
-        </div>
+        <div class="fit-item"><div class="fit-name">Conference</div><div class="fit-bar-bg"><div class="fit-bar conf" style="width:70%"></div></div><div class="fit-score conf">70</div></div>
+        <div class="fit-item"><div class="fit-name">Media</div><div class="fit-bar-bg"><div class="fit-bar media" style="width:60%"></div></div><div class="fit-score media">60</div></div>
+        <div class="fit-item"><div class="fit-name">BMTV</div><div class="fit-bar-bg"><div class="fit-bar bmtv" style="width:45%"></div></div><div class="fit-score bmtv">45</div></div>
+        <div class="fit-item"><div class="fit-name">BFC</div><div class="fit-bar-bg"><div class="fit-bar bfc" style="width:80%"></div></div><div class="fit-score bfc">80</div></div>
       </div>
     </div>
     <div class="card-actions">
-      <button class="action-btn btn-contact" onclick="decide(16, 'contact')">✅ Add to Outreach</button>
-      <button class="action-btn btn-skip" onclick="decide(16, 'skip')">Skip</button>
-      <button class="action-btn btn-delete" onclick="decide(16, 'delete')">🗑 Tag Delete</button>
+      <button class="action-btn btn-contact" onclick="decide(16,'contact')">&#10003; Add to Outreach</button>
+      <button class="action-btn btn-skip" onclick="decide(16,'skip')">Skip</button>
+      <button class="action-btn btn-delete" onclick="decide(16,'delete')">&#128465; Tag Delete</button>
     </div>
     <div class="decided-badge" id="badge-16"></div>
   </div>
-
-  <div class="card" id="card-17" data-id="17" data-name="KynHaus" data-hs="https://app.hubspot.com/contacts/242236444/record/0-2/316435963612">
+  <div class="card" id="card-17" data-id="17" data-name="KynHaus">
     <div class="card-top">
       <div class="score-ring tier-C">
         <span class="score-num">11</span>
@@ -939,219 +731,160 @@ body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; b
       <div class="card-main">
         <div class="company-name"><a href="https://app.hubspot.com/contacts/242236444/record/0-2/316435963612" target="_blank">KynHaus</a></div>
         <div class="company-meta"></div>
-        <div class="btc-angle"><span class="btc-rel-dot rel-none"></span>❓ Unclear fit — review manually</div>
-        <div class="description">No description available.</div>
-        <div class="card-links"><a class="link-btn" href="https://app.hubspot.com/contacts/242236444/record/0-2/316435963612" target="_blank">🏠 HubSpot</a><a class="link-btn" href="https://linkedin.com/company/109905240" target="_blank">in LinkedIn</a></div>
+        <div class="btc-angle">❓ Unclear fit — review manually</div>
+        <div class="description">No description available — research manually.</div>
       </div>
     </div>
+    <div class="news-hook">
+      <div class="news-hook-label">&#128240; News Hook</div>
+      <div class="news-hook-headline">❓ No description, domain, or website — unable to research</div>
+      <div class="news-hook-angle"><strong>Outreach angle:</strong> Needs manual review before outreach.</div>
+    </div>
+    <div class="card-links"><a class="link-btn" href="https://app.hubspot.com/contacts/242236444/record/0-2/316435963612" target="_blank">&#127968; HubSpot</a><a class="link-btn" href="https://linkedin.com/company/109905240" target="_blank">in LinkedIn</a></div>
     <div class="card-fit">
       <div class="fit-label">Product Fit</div>
       <div class="fit-grid">
-        <div class="fit-item">
-          <div class="fit-name">Conference</div>
-          <div class="fit-bar-bg"><div class="fit-bar conf" style="width:20%"></div></div>
-          <div class="fit-score conf">20</div>
-        </div>
-        <div class="fit-item">
-          <div class="fit-name">Media</div>
-          <div class="fit-bar-bg"><div class="fit-bar media" style="width:15%"></div></div>
-          <div class="fit-score media">15</div>
-        </div>
-        <div class="fit-item">
-          <div class="fit-name">BMTV</div>
-          <div class="fit-bar-bg"><div class="fit-bar bmtv" style="width:10%"></div></div>
-          <div class="fit-score bmtv">10</div>
-        </div>
-        <div class="fit-item">
-          <div class="fit-name">BFC</div>
-          <div class="fit-bar-bg"><div class="fit-bar bfc" style="width:10%"></div></div>
-          <div class="fit-score bfc">10</div>
-        </div>
+        <div class="fit-item"><div class="fit-name">Conference</div><div class="fit-bar-bg"><div class="fit-bar conf" style="width:20%"></div></div><div class="fit-score conf">20</div></div>
+        <div class="fit-item"><div class="fit-name">Media</div><div class="fit-bar-bg"><div class="fit-bar media" style="width:15%"></div></div><div class="fit-score media">15</div></div>
+        <div class="fit-item"><div class="fit-name">BMTV</div><div class="fit-bar-bg"><div class="fit-bar bmtv" style="width:10%"></div></div><div class="fit-score bmtv">10</div></div>
+        <div class="fit-item"><div class="fit-name">BFC</div><div class="fit-bar-bg"><div class="fit-bar bfc" style="width:10%"></div></div><div class="fit-score bfc">10</div></div>
       </div>
     </div>
     <div class="card-actions">
-      <button class="action-btn btn-contact" onclick="decide(17, 'contact')">✅ Add to Outreach</button>
-      <button class="action-btn btn-skip" onclick="decide(17, 'skip')">Skip</button>
-      <button class="action-btn btn-delete" onclick="decide(17, 'delete')">🗑 Tag Delete</button>
+      <button class="action-btn btn-contact" onclick="decide(17,'contact')">&#10003; Add to Outreach</button>
+      <button class="action-btn btn-skip" onclick="decide(17,'skip')">Skip</button>
+      <button class="action-btn btn-delete" onclick="decide(17,'delete')">&#128465; Tag Delete</button>
     </div>
     <div class="decided-badge" id="badge-17"></div>
   </div>
-
-  <div class="card" id="card-18" data-id="18" data-name="The Clue" data-hs="https://app.hubspot.com/contacts/242236444/record/0-2/316676622039">
+  <div class="card" id="card-18" data-id="18" data-name="The Clue">
     <div class="card-top">
       <div class="score-ring tier-C">
         <span class="score-num">7</span>
         <span class="score-tier">C</span>
       </div>
       <div class="card-main">
-        <div class="company-name"><a href="https://app.hubspot.com/contacts/242236444/record/0-2/316676622039" target="_blank">The Clue</a>&nbsp;<span style="font-size:12px;color:#555;font-weight:400">theclue.io</span></div>
-        <div class="company-meta"><span class="meta-tag">👥 10 employees</span></div>
-        <div class="btc-angle"><span class="btc-rel-dot rel-none"></span>❓ Unclear fit — review manually</div>
+        <div class="company-name"><a href="https://app.hubspot.com/contacts/242236444/record/0-2/316676622039" target="_blank">The Clue</a> &nbsp;<span style='font-size:11px;color:#444'>theclue.io</span></div>
+        <div class="company-meta"><span class="meta-tag">&#128101; 10</span></div>
+        <div class="btc-angle">❓ Unclear fit — review manually</div>
         <div class="description">No description available.</div>
-        <div class="card-links"><a class="link-btn" href="https://app.hubspot.com/contacts/242236444/record/0-2/316676622039" target="_blank">🏠 HubSpot</a><a class="link-btn" href="https://theclue.io" target="_blank">🌐 Website</a></div>
       </div>
     </div>
+    <div class="news-hook">
+      <div class="news-hook-label">&#128240; News Hook</div>
+      <div class="news-hook-headline">❓ No description or industry — minimal data available</div>
+      <div class="news-hook-angle"><strong>Outreach angle:</strong> Tag for deletion or manual review.</div>
+    </div>
+    <div class="card-links"><a class="link-btn" href="https://app.hubspot.com/contacts/242236444/record/0-2/316676622039" target="_blank">&#127968; HubSpot</a><a class="link-btn" href="https://theclue.io" target="_blank">&#127760; Website</a></div>
     <div class="card-fit">
       <div class="fit-label">Product Fit</div>
       <div class="fit-grid">
-        <div class="fit-item">
-          <div class="fit-name">Conference</div>
-          <div class="fit-bar-bg"><div class="fit-bar conf" style="width:20%"></div></div>
-          <div class="fit-score conf">20</div>
-        </div>
-        <div class="fit-item">
-          <div class="fit-name">Media</div>
-          <div class="fit-bar-bg"><div class="fit-bar media" style="width:15%"></div></div>
-          <div class="fit-score media">15</div>
-        </div>
-        <div class="fit-item">
-          <div class="fit-name">BMTV</div>
-          <div class="fit-bar-bg"><div class="fit-bar bmtv" style="width:10%"></div></div>
-          <div class="fit-score bmtv">10</div>
-        </div>
-        <div class="fit-item">
-          <div class="fit-name">BFC</div>
-          <div class="fit-bar-bg"><div class="fit-bar bfc" style="width:10%"></div></div>
-          <div class="fit-score bfc">10</div>
-        </div>
+        <div class="fit-item"><div class="fit-name">Conference</div><div class="fit-bar-bg"><div class="fit-bar conf" style="width:20%"></div></div><div class="fit-score conf">20</div></div>
+        <div class="fit-item"><div class="fit-name">Media</div><div class="fit-bar-bg"><div class="fit-bar media" style="width:15%"></div></div><div class="fit-score media">15</div></div>
+        <div class="fit-item"><div class="fit-name">BMTV</div><div class="fit-bar-bg"><div class="fit-bar bmtv" style="width:10%"></div></div><div class="fit-score bmtv">10</div></div>
+        <div class="fit-item"><div class="fit-name">BFC</div><div class="fit-bar-bg"><div class="fit-bar bfc" style="width:10%"></div></div><div class="fit-score bfc">10</div></div>
       </div>
     </div>
     <div class="card-actions">
-      <button class="action-btn btn-contact" onclick="decide(18, 'contact')">✅ Add to Outreach</button>
-      <button class="action-btn btn-skip" onclick="decide(18, 'skip')">Skip</button>
-      <button class="action-btn btn-delete" onclick="decide(18, 'delete')">🗑 Tag Delete</button>
+      <button class="action-btn btn-contact" onclick="decide(18,'contact')">&#10003; Add to Outreach</button>
+      <button class="action-btn btn-skip" onclick="decide(18,'skip')">Skip</button>
+      <button class="action-btn btn-delete" onclick="decide(18,'delete')">&#128465; Tag Delete</button>
     </div>
     <div class="decided-badge" id="badge-18"></div>
   </div>
-
-  <div class="card" id="card-19" data-id="19" data-name="Gyndore" data-hs="https://app.hubspot.com/contacts/242236444/record/0-2/316482788030">
+  <div class="card" id="card-19" data-id="19" data-name="Gyndore">
     <div class="card-top">
       <div class="score-ring tier-C">
         <span class="score-num">5</span>
         <span class="score-tier">C</span>
       </div>
       <div class="card-main">
-        <div class="company-name"><a href="https://app.hubspot.com/contacts/242236444/record/0-2/316482788030" target="_blank">Gyndore</a>&nbsp;<span style="font-size:12px;color:#555;font-weight:400">gyndore.ai</span></div>
-        <div class="company-meta"></div>
-        <div class="btc-angle"><span class="btc-rel-dot rel-none"></span>❓ Unclear fit — review manually</div>
-        <div class="description">No description available.</div>
-        <div class="card-links"><a class="link-btn" href="https://app.hubspot.com/contacts/242236444/record/0-2/316482788030" target="_blank">🏠 HubSpot</a><a class="link-btn" href="https://gyndore.ai" target="_blank">🌐 Website</a></div>
+        <div class="company-name"><a href="https://app.hubspot.com/contacts/242236444/record/0-2/316482788030" target="_blank">Gyndore</a> &nbsp;<span style='font-size:11px;color:#444'>gyndore.ai</span></div>
+        <div class="company-meta"><span class="meta-tag">AI</span></div>
+        <div class="btc-angle">🛠 Tech/AI — research manually</div>
+        <div class="description">AI company — no public description available.</div>
       </div>
     </div>
+    <div class="news-hook">
+      <div class="news-hook-label">&#128240; News Hook</div>
+      <div class="news-hook-headline">🤖 AI company (gyndore.ai) — no public news or description</div>
+      <div class="news-hook-angle"><strong>Outreach angle:</strong> Research manually before outreach. Possible tech/AI angle for BFC.</div>
+    </div>
+    <div class="card-links"><a class="link-btn" href="https://app.hubspot.com/contacts/242236444/record/0-2/316482788030" target="_blank">&#127968; HubSpot</a><a class="link-btn" href="https://gyndore.ai" target="_blank">&#127760; Website</a></div>
     <div class="card-fit">
       <div class="fit-label">Product Fit</div>
       <div class="fit-grid">
-        <div class="fit-item">
-          <div class="fit-name">Conference</div>
-          <div class="fit-bar-bg"><div class="fit-bar conf" style="width:20%"></div></div>
-          <div class="fit-score conf">20</div>
-        </div>
-        <div class="fit-item">
-          <div class="fit-name">Media</div>
-          <div class="fit-bar-bg"><div class="fit-bar media" style="width:15%"></div></div>
-          <div class="fit-score media">15</div>
-        </div>
-        <div class="fit-item">
-          <div class="fit-name">BMTV</div>
-          <div class="fit-bar-bg"><div class="fit-bar bmtv" style="width:10%"></div></div>
-          <div class="fit-score bmtv">10</div>
-        </div>
-        <div class="fit-item">
-          <div class="fit-name">BFC</div>
-          <div class="fit-bar-bg"><div class="fit-bar bfc" style="width:10%"></div></div>
-          <div class="fit-score bfc">10</div>
-        </div>
+        <div class="fit-item"><div class="fit-name">Conference</div><div class="fit-bar-bg"><div class="fit-bar conf" style="width:30%"></div></div><div class="fit-score conf">30</div></div>
+        <div class="fit-item"><div class="fit-name">Media</div><div class="fit-bar-bg"><div class="fit-bar media" style="width:25%"></div></div><div class="fit-score media">25</div></div>
+        <div class="fit-item"><div class="fit-name">BMTV</div><div class="fit-bar-bg"><div class="fit-bar bmtv" style="width:20%"></div></div><div class="fit-score bmtv">20</div></div>
+        <div class="fit-item"><div class="fit-name">BFC</div><div class="fit-bar-bg"><div class="fit-bar bfc" style="width:55%"></div></div><div class="fit-score bfc">55</div></div>
       </div>
     </div>
     <div class="card-actions">
-      <button class="action-btn btn-contact" onclick="decide(19, 'contact')">✅ Add to Outreach</button>
-      <button class="action-btn btn-skip" onclick="decide(19, 'skip')">Skip</button>
-      <button class="action-btn btn-delete" onclick="decide(19, 'delete')">🗑 Tag Delete</button>
+      <button class="action-btn btn-contact" onclick="decide(19,'contact')">&#10003; Add to Outreach</button>
+      <button class="action-btn btn-skip" onclick="decide(19,'skip')">Skip</button>
+      <button class="action-btn btn-delete" onclick="decide(19,'delete')">&#128465; Tag Delete</button>
     </div>
     <div class="decided-badge" id="badge-19"></div>
   </div>
-
 </div>
 
 <div class="summary-panel" id="summary-panel">
   <div class="summary-box">
-    <div class="summary-title">✅ Daily Review Complete — April 3, 2026</div>
-    <div class="summary-section">
-      <h4 class="contact">TO CONTACT</h4>
-      <div class="summary-list" id="summary-contact">—</div>
-    </div>
-    <div class="summary-section">
-      <h4 class="delete">TAG FOR DELETE</h4>
-      <div class="summary-list" id="summary-delete">—</div>
-    </div>
-    <button class="copy-btn" onclick="copyDecisions()">📋 Copy Decisions for HubSpot</button>
+    <div class="summary-title">&#10003; Daily Review Complete — April 3, 2026</div>
+    <div class="sum-section"><h4 class="contact">TO CONTACT</h4><div class="sum-list" id="sum-contact">—</div></div>
+    <div class="sum-section"><h4 class="delete">TAG FOR DELETE</h4><div class="sum-list" id="sum-delete">—</div></div>
+    <button class="copy-btn" onclick="copyAll()">&#128203; Copy for HubSpot</button>
   </div>
 </div>
 
 <div class="done-bar">
-  <div class="done-bar-msg">Review your 20 companies · <strong>2,567 total</strong> in queue</div>
-  <button class="finish-btn" id="finish-btn" onclick="showSummary()" disabled>Finish Review →</button>
+  <div class="done-msg">April 3, 2026 &middot; <strong>2,567 companies</strong> remaining in queue</div>
+  <button class="finish-btn" id="finish-btn" onclick="showSummary()" disabled>Finish Review &#8594;</button>
 </div>
 
 <script>
 const decisions = {};
-const companies = [{"id": 0, "name": "Gusto", "hs_url": "https://app.hubspot.com/contacts/242236444/record/0-2/316442458852"}, {"id": 1, "name": "Teikoku Databank", "hs_url": "https://app.hubspot.com/contacts/242236444/record/0-2/316441028300"}, {"id": 2, "name": "Manna", "hs_url": "https://app.hubspot.com/contacts/242236444/record/0-2/316575787724"}, {"id": 3, "name": "Starwood Capital Group", "hs_url": "https://app.hubspot.com/contacts/242236444/record/0-2/316674456261"}, {"id": 4, "name": "SeedSigner", "hs_url": "https://app.hubspot.com/contacts/242236444/record/0-2/316486399720"}, {"id": 5, "name": "Quantify Funds", "hs_url": "https://app.hubspot.com/contacts/242236444/record/0-2/316576504534"}, {"id": 6, "name": "Decoy", "hs_url": "https://app.hubspot.com/contacts/242236444/record/0-2/316575786730"}, {"id": 7, "name": "Linear", "hs_url": "https://app.hubspot.com/contacts/242236444/record/0-2/316441751236"}, {"id": 8, "name": "NSA - National Cryptologic Museum", "hs_url": "https://app.hubspot.com/contacts/242236444/record/0-2/316676617933"}, {"id": 9, "name": "Vibe", "hs_url": "https://app.hubspot.com/contacts/242236444/record/0-2/316439595758"}, {"id": 10, "name": "Windsurf", "hs_url": "https://app.hubspot.com/contacts/242236444/record/0-2/316483515083"}, {"id": 11, "name": "Console.com", "hs_url": "https://app.hubspot.com/contacts/242236444/record/0-2/316442458848"}, {"id": 12, "name": "Gambly", "hs_url": "https://app.hubspot.com/contacts/242236444/record/0-2/316482788032"}, {"id": 13, "name": "Lake Champlain Community Sailing Center", "hs_url": "https://app.hubspot.com/contacts/242236444/record/0-2/316492950219"}, {"id": 14, "name": "LP Prosper", "hs_url": "https://app.hubspot.com/contacts/242236444/record/0-2/316486398676"}, {"id": 15, "name": "Nada Nada", "hs_url": "https://app.hubspot.com/contacts/242236444/record/0-2/316802221794"}, {"id": 16, "name": "BankWyse", "hs_url": "https://app.hubspot.com/contacts/242236444/record/0-2/316676621046"}, {"id": 17, "name": "KynHaus", "hs_url": "https://app.hubspot.com/contacts/242236444/record/0-2/316435963612"}, {"id": 18, "name": "The Clue", "hs_url": "https://app.hubspot.com/contacts/242236444/record/0-2/316676622039"}, {"id": 19, "name": "Gyndore", "hs_url": "https://app.hubspot.com/contacts/242236444/record/0-2/316482788030"}];
+const names = {"0": "Gusto", "1": "Teikoku Databank", "2": "Manna", "3": "Starwood Capital Group", "4": "SeedSigner", "5": "Quantify Funds", "6": "Decoy", "7": "Linear", "8": "NSA - National Cryptologic Museum", "9": "Vibe", "10": "Windsurf", "11": "Console.com", "12": "Gambly", "13": "Lake Champlain Community Sailing Center", "14": "LP Prosper", "15": "Nada Nada", "16": "BankWyse", "17": "KynHaus", "18": "The Clue", "19": "Gyndore"};
+const hsUrls = {"0": "https://app.hubspot.com/contacts/242236444/record/0-2/316442458852", "1": "https://app.hubspot.com/contacts/242236444/record/0-2/316441028300", "2": "https://app.hubspot.com/contacts/242236444/record/0-2/316575787724", "3": "https://app.hubspot.com/contacts/242236444/record/0-2/316674456261", "4": "https://app.hubspot.com/contacts/242236444/record/0-2/316486399720", "5": "https://app.hubspot.com/contacts/242236444/record/0-2/316576504534", "6": "https://app.hubspot.com/contacts/242236444/record/0-2/316575786730", "7": "https://app.hubspot.com/contacts/242236444/record/0-2/316441751236", "8": "https://app.hubspot.com/contacts/242236444/record/0-2/316676617933", "9": "https://app.hubspot.com/contacts/242236444/record/0-2/316439595758", "10": "https://app.hubspot.com/contacts/242236444/record/0-2/316483515083", "11": "https://app.hubspot.com/contacts/242236444/record/0-2/316442458848", "12": "https://app.hubspot.com/contacts/242236444/record/0-2/316482788032", "13": "https://app.hubspot.com/contacts/242236444/record/0-2/316492950219", "14": "https://app.hubspot.com/contacts/242236444/record/0-2/316486398676", "15": "https://app.hubspot.com/contacts/242236444/record/0-2/316802221794", "16": "https://app.hubspot.com/contacts/242236444/record/0-2/316676621046", "17": "https://app.hubspot.com/contacts/242236444/record/0-2/316435963612", "18": "https://app.hubspot.com/contacts/242236444/record/0-2/316676622039", "19": "https://app.hubspot.com/contacts/242236444/record/0-2/316482788030"};
 
 function decide(idx, action) {
   decisions[idx] = action;
   const card = document.getElementById('card-' + idx);
   const badge = document.getElementById('badge-' + idx);
-
-  card.classList.remove('decided-contact', 'decided-delete');
-  if (action === 'contact') {
-    card.classList.add('decided-contact');
-    badge.textContent = '✅ Added to outreach queue';
-  } else if (action === 'delete') {
-    card.classList.add('decided-delete');
-    badge.textContent = '🗑 Tagged for deletion';
-  }
-
+  card.classList.remove('decided-contact','decided-delete');
+  if (action === 'contact') { card.classList.add('decided-contact'); badge.textContent = '✓ Added to outreach queue'; }
+  else if (action === 'delete') { card.classList.add('decided-delete'); badge.textContent = '🗑 Tagged for deletion'; }
   updateProgress();
-  card.scrollIntoView({ behavior: 'smooth', block: 'center' });
-  const cards = document.querySelectorAll('.card');
-  for (let i = idx + 1; i < cards.length; i++) {
-    if (!decisions[i]) {
-      setTimeout(() => cards[i].scrollIntoView({ behavior: 'smooth', block: 'start' }), 400);
-      break;
-    }
+  const all = document.querySelectorAll('.card');
+  for (let i = idx + 1; i < all.length; i++) {
+    if (!decisions[i]) { setTimeout(() => all[i].scrollIntoView({behavior:'smooth',block:'start'}), 350); break; }
   }
 }
 
 function updateProgress() {
-  const decided = Object.keys(decisions).length;
-  const pct = (decided / 20) * 100;
-  document.getElementById('progress-bar').style.width = pct + '%';
-  document.getElementById('progress-text').textContent = decided + ' / 20';
-  const contacts = Object.values(decisions).filter(d => d === 'contact').length;
-  const deletes = Object.values(decisions).filter(d => d === 'delete').length;
-  document.getElementById('contact-count').textContent = contacts;
-  document.getElementById('delete-count').textContent = deletes;
-  document.getElementById('finish-btn').disabled = decided < 20;
+  const n = Object.keys(decisions).length;
+  document.getElementById('prog-bar').style.width = (n/20*100) + '%';
+  document.getElementById('prog-text').textContent = n + '/20';
+  document.getElementById('contact-count').textContent = Object.values(decisions).filter(d=>d==='contact').length;
+  document.getElementById('delete-count').textContent = Object.values(decisions).filter(d=>d==='delete').length;
+  document.getElementById('finish-btn').disabled = n < 20;
 }
 
 function showSummary() {
-  const contacts = companies.filter(c => decisions[c.id] === 'contact');
-  const deletes = companies.filter(c => decisions[c.id] === 'delete');
-  document.getElementById('summary-contact').innerHTML = contacts.length
-    ? contacts.map(c => `<a href="${c.hs_url}" target="_blank" style="color:#27ae60;text-decoration:none;">${c.name}</a>`).join('<br>')
-    : 'None selected';
-  document.getElementById('summary-delete').innerHTML = deletes.length
-    ? deletes.map(c => `<a href="${c.hs_url}" target="_blank" style="color:#e74c3c;text-decoration:none;">${c.name}</a>`).join('<br>')
-    : 'None selected';
+  const contacts = Object.entries(decisions).filter(([,v])=>v==='contact');
+  const deletes = Object.entries(decisions).filter(([,v])=>v==='delete');
+  document.getElementById('sum-contact').innerHTML = contacts.length ? contacts.map(([i])=>`<a href="${hsUrls[i]}" target="_blank" style="color:#27ae60;text-decoration:none">${names[i]}</a>`).join('<br>') : 'None';
+  document.getElementById('sum-delete').innerHTML = deletes.length ? deletes.map(([i])=>`<a href="${hsUrls[i]}" target="_blank" style="color:#e74c3c;text-decoration:none">${names[i]}</a>`).join('<br>') : 'None';
   document.getElementById('summary-panel').classList.add('visible');
-  document.getElementById('summary-panel').scrollIntoView({ behavior: 'smooth' });
+  document.getElementById('summary-panel').scrollIntoView({behavior:'smooth'});
 }
 
-function copyDecisions() {
-  const contacts = companies.filter(c => decisions[c.id] === 'contact').map(c => c.name);
-  const deletes = companies.filter(c => decisions[c.id] === 'delete').map(c => c.name);
-  const text = `CRM Hygiene Decisions — April 3, 2026\n\nTO CONTACT (${contacts.length}):\n${contacts.join('\n') || 'None'}\n\nTAG DELETE (${deletes.length}):\n${deletes.join('\n') || 'None'}`;
-  navigator.clipboard.writeText(text).then(() => alert('Copied to clipboard!'));
+function copyAll() {
+  const contacts = Object.entries(decisions).filter(([,v])=>v==='contact').map(([i])=>names[i]);
+  const deletes = Object.entries(decisions).filter(([,v])=>v==='delete').map(([i])=>names[i]);
+  const t = `CRM Hygiene — April 3, 2026\nTO CONTACT (${contacts.length}):\n${contacts.join('\n')||'None'}\n\nTAG DELETE (${deletes.length}):\n${deletes.join('\n')||'None'}`;
+  navigator.clipboard.writeText(t).then(()=>alert('Copied!'));
 }
 </script>
 </body>
