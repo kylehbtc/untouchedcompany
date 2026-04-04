@@ -854,7 +854,7 @@ function decide(idx, action) {
   const badge = document.getElementById('badge-' + idx);
   card.classList.remove('decided-contact','decided-delete');
   if (action === 'contact') { card.classList.add('decided-contact'); badge.textContent = '✓ Added to outreach queue'; }
-  else if (action === 'delete') { card.classList.add('decided-delete'); badge.textContent = '🗑 Tagged for deletion'; }
+  else if (action === 'delete') { card.classList.add('decided-delete'); badge.textContent = '🗑 Tagged: Dead'; }
   updateProgress();
   const all = document.querySelectorAll('.card');
   for (let i = idx + 1; i < all.length; i++) {
@@ -882,9 +882,12 @@ function showSummary() {
 
 function copyAll() {
   const contacts = Object.entries(decisions).filter(([,v])=>v==='contact').map(([i])=>names[i]);
-  const deletes = Object.entries(decisions).filter(([,v])=>v==='delete').map(([i])=>names[i]);
-  const t = `CRM Hygiene — April 3, 2026\nTO CONTACT (${contacts.length}):\n${contacts.join('\n')||'None'}\n\nTAG DELETE (${deletes.length}):\n${deletes.join('\n')||'None'}`;
-  navigator.clipboard.writeText(t).then(()=>alert('Copied!'));
+  const deletes = Object.entries(decisions).filter(([,v])=>v==='delete').map(([i])=>{
+    const id = hsUrls[i].split('/').pop();
+    return `${names[i]} | ID: ${id}`;
+  });
+  const t = `CRM Hygiene — April 3, 2026\nTO CONTACT (${contacts.length}):\n${contacts.join('\n')||'None'}\n\nTAG DEAD (${deletes.length}):\n${deletes.join('\n')||'None'}`;
+  navigator.clipboard.writeText(t).then(()=>alert('Copied! Paste to Claude to apply "Dead" tags in HubSpot.'));
 }
 </script>
 </body>
